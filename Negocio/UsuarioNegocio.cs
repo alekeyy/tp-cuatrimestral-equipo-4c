@@ -18,7 +18,7 @@ namespace Negocio
 
             try
             {
-                datos.setearConsulta("SELECT ID, IDTipoUsuario, Nombre, Apellido, Email, Pass from USUARIO;");
+                datos.setearConsulta("SELECT ID, IDTipoUsuario, Nombre, Apellido, Email, Pass from USUARIO ORDER BY IDTipoUsuario ASC");
                 datos.ejecutarLectura();
 
                 while (datos.Lector.Read())

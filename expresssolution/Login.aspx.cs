@@ -18,7 +18,7 @@ namespace expresssolution
         {
             try
             {
-                Response.Redirect("Inicio.aspx", false);
+                Response.Redirect("Principal.aspx", false);
             }
             catch (Exception ex)
             {
