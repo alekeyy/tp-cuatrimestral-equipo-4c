@@ -1,0 +1,18 @@
+C:\Users\poky1975\Desktop\facultad\6 - programacion 3\Z - trabajos practicos\tpc\TPC_Programacion_III\Dominio\bin\Debug\Dominio.dll
+C:\Users\poky1975\Desktop\facultad\6 - programacion 3\Z - trabajos practicos\tpc\TPC_Programacion_III\Dominio\bin\Debug\Dominio.pdb
+C:\Users\poky1975\Desktop\facultad\6 - programacion 3\Z - trabajos practicos\tpc\TPC_Programacion_III\Dominio\obj\Debug\Dominio.csproj.AssemblyReference.cache
+C:\Users\poky1975\Desktop\facultad\6 - programacion 3\Z - trabajos practicos\tpc\TPC_Programacion_III\Dominio\obj\Debug\Dominio.csproj.CoreCompileInputs.cache
+C:\Users\poky1975\Desktop\facultad\6 - programacion 3\Z - trabajos practicos\tpc\TPC_Programacion_III\Dominio\obj\Debug\Dominio.dll
+C:\Users\poky1975\Desktop\facultad\6 - programacion 3\Z - trabajos practicos\tpc\TPC_Programacion_III\Dominio\obj\Debug\Dominio.pdb
+C:\Users\Usuario\Downloads\TPC_Programacion_III\TPC_Programacion_III\Dominio\bin\Debug\Dominio.dll
+C:\Users\Usuario\Downloads\TPC_Programacion_III\TPC_Programacion_III\Dominio\bin\Debug\Dominio.pdb
+C:\Users\Usuario\Downloads\TPC_Programacion_III\TPC_Programacion_III\Dominio\obj\Debug\Dominio.csproj.AssemblyReference.cache
+C:\Users\Usuario\Downloads\TPC_Programacion_III\TPC_Programacion_III\Dominio\obj\Debug\Dominio.csproj.CoreCompileInputs.cache
+C:\Users\Usuario\Downloads\TPC_Programacion_III\TPC_Programacion_III\Dominio\obj\Debug\Dominio.dll
+C:\Users\Usuario\Downloads\TPC_Programacion_III\TPC_Programacion_III\Dominio\obj\Debug\Dominio.pdb
+C:\Users\Usuario\Desktop\UTN\PROG 3\tp-cuatrimestral-equipo-4c\expresssolution\Dominio\bin\Debug\Dominio.dll
+C:\Users\Usuario\Desktop\UTN\PROG 3\tp-cuatrimestral-equipo-4c\expresssolution\Dominio\bin\Debug\Dominio.pdb
+C:\Users\Usuario\Desktop\UTN\PROG 3\tp-cuatrimestral-equipo-4c\expresssolution\Dominio\obj\Debug\Dominio.csproj.AssemblyReference.cache
+C:\Users\Usuario\Desktop\UTN\PROG 3\tp-cuatrimestral-equipo-4c\expresssolution\Dominio\obj\Debug\Dominio.csproj.CoreCompileInputs.cache
+C:\Users\Usuario\Desktop\UTN\PROG 3\tp-cuatrimestral-equipo-4c\expresssolution\Dominio\obj\Debug\Dominio.dll
+C:\Users\Usuario\Desktop\UTN\PROG 3\tp-cuatrimestral-equipo-4c\expresssolution\Dominio\obj\Debug\Dominio.pdb

@@ -1,0 +1,2 @@
+C:\Users\Usuario\Desktop\UTN\PROG 3\tp-cuatrimestral-equipo-4c\expresssolution\obj\Debug\Negocio.csproj.AssemblyReference.cache
+C:\Users\Usuario\Desktop\UTN\PROG 3\tp-cuatrimestral-equipo-4c\expresssolution\obj\Debug\Negocio.csproj.CoreCompileInputs.cache

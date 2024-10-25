@@ -1,0 +1,60 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="Master.master.cs" Inherits="expresssolution.Master" %>
+
+<!DOCTYPE html>
+
+<html lang="es">
+<head runat="server">
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>EXPRESS SOLUTIONS </title>
+    <link href="~/images/favicon.ico" rel="shortcut icon" type="image/x-icon" />
+
+    <asp:ContentPlaceHolder ID="head" runat="server">
+    </asp:ContentPlaceHolder>
+    <link href="Content/bootstrap.css" rel="stylesheet" />
+    <link href="Content/bootstrap.min.css" rel="stylesheet" />
+</head>
+<body>
+    <form id="form1" runat="server">
+        <nav class="navbar navbar-expand-sm navbar-toggleable-sm navbar-dark bg-dark">
+            <div class="container">
+                <a class="navbar-brand" runat="server" href="~/Default">EXPRESS SOLUTIONS</a>
+                <button type="button" class="navbar-toggler" data-bs-toggle="collapse" data-bs-target=".navbar-collapse" title="Alternar navegación" aria-controls="navbarSupportedContent"
+                    aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse d-sm-inline-flex">
+                    <ul class="navbar-nav flex-grow-1 me-auto mb-lg-0">
+
+                        <li class="nav-item" >
+                            <a class="nav-link btn btn-outline-success" runat="server" href="~/Login.aspx">Login</a>
+                        </li>
+
+                        <li class="nav-item">
+                            <a class="nav-link btn btn-outline-primary" runat="server" href="~/Registro.aspx">Registrarse</a>
+                        </li>
+
+                        <li class="nav-item">
+                            <a class="nav-link btn btn-outline-secondary" runat="server" href="~/Perfil.aspx">Mi Perfil</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+        <div class="container body-content">
+            <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server">
+            </asp:ContentPlaceHolder>
+            
+            <hr />
+            <footer>
+                <a href="About.aspx">Sobre nosotros</a>
+                <p>ESTE ES EL FOOTER Y LO TENEMOS QUE PERSONALIZAR</p>
+                <p>AGREGAMOS NUESTRAS RRSS :)</p>
+            </footer>
+        </div>
+    </form>
+    <script src="Scripts/bootstrap.js"></script>
+    <script src="Scripts/bootstrap.min.js"></script>
+</body>
+</html>
