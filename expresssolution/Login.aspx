@@ -10,7 +10,7 @@
                 <asp:Label Text="Correo: " runat="server" CssClass="form-label" />
                 <asp:TextBox runat="server" CssClass="form-control" ID="txtEmail"/>
                 <asp:Label Text="Contraseña: " runat="server" CssClass="form-label" />
-                <asp:TextBox runat="server" CssClass="form-control" ID="txtPass"/>
+                <asp:TextBox runat="server" CssClass="form-control" ID="txtPass" type="password"/>
             </div>
         </div>
     </div>

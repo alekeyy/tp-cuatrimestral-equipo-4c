@@ -69,5 +69,23 @@ namespace Negocio
                 throw ex;
             }
         }
+
+        public int Registrarse(Usuario usuario)
+        {
+            AccesoDatos datos = new AccesoDatos();
+            try
+            {
+                datos.setearConsulta("EXEC RegistrarUsuario @Nombre, @Apellido, @Email, @Pass");
+                datos.setearParametro("@Nombre", usuario.Nombre);
+                datos.setearParametro("@Apellido", usuario.Apellido);
+                datos.setearParametro("@Email", usuario.Email);
+                datos.setearParametro("@Pass", usuario.Pass);
+                return datos.ejecutarAccionScalar();
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+        }
     }
 }

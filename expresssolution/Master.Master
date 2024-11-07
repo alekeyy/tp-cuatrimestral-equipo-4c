@@ -27,7 +27,7 @@
                 <div class="collapse navbar-collapse d-sm-inline-flex">
                     <ul class="navbar-nav flex-grow-1 me-auto mb-lg-0">
 
-                        <%if (!Seguridad.seguridad.SessionActiva(Session["usuario"]))
+                        <%if (!Seguridad.seguridad.SessionActiva(Session["Usuario"]))
                             {%>
                         <li class="nav-item" >
                             <a class="nav-link btn btn-outline-success" runat="server" href="~/Login.aspx">Login</a>

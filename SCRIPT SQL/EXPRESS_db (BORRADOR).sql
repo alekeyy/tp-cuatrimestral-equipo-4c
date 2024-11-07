@@ -128,6 +128,30 @@ INSERT INTO USUARIO (IDTipoUsuario, Nombre, Apellido, Email, Pass) VALUES
 
 
 
+-- COMANDOS
+USE EXPRESS_SOLUTIONS_DB_borrador
 
+-- SELECT TODO
+SELECT * FROM USUARIO;
+
+-- Modificar campo email en tabla usuarios para que sea unique
+ALTER TABLE USUARIO
+ADD CONSTRAINT U_Email UNIQUE (email);
+
+-- REGISTRAR
+CREATE or ALTER PROCEDURE RegistrarUsuario (
+	@Nombre nvarchar(50),
+	@Apellido nvarchar(50),
+	@Email nvarchar(50),
+	@Pass nvarchar(50)
+)
+AS BEGIN
+	INSERT INTO USUARIO(Nombre, Apellido, Email, Pass, IDTipoUsuario)
+	OUTPUT inserted.Id
+	VALUES(@Nombre, @Apellido, @Email, @Pass, 1) --Es 1 ya que al registrar, automaticamente te identifica como cliente
+END
+
+-- EJEMPLO
+EXEC RegistrarUsuario 'Braian', 'Pirelli', 'braian@mail', 'soybraian';
 
 

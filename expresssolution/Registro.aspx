@@ -11,10 +11,14 @@
     <div class="row">
         <div class="col-3">
             <div class="mb-3">
-                <asp:Label Text="Usuario: " runat="server" CssClass="form-label" />
-                <asp:TextBox runat="server" CssClass="form-control" />
+                <asp:Label Text="Nombre: " runat="server" CssClass="form-label" />
+                <asp:TextBox runat="server" CssClass="form-control" ID="txtNombre"/>
+                <asp:Label Text="Apellido: " runat="server" CssClass="form-label" />
+                <asp:TextBox runat="server" CssClass="form-control" ID="txtApellido"/>
+                <asp:Label Text="Correo: " runat="server" CssClass="form-label" />
+                <asp:TextBox runat="server" CssClass="form-control" ID="txtEmail"/>
                 <asp:Label Text="Contraseña: " runat="server" CssClass="form-label" />
-                <asp:TextBox runat="server" CssClass="form-control" />
+                <asp:TextBox runat="server" CssClass="form-control" ID="txtPass" type="password"/>
             </div>
         </div>
     </div>

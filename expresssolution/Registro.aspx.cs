@@ -4,6 +4,8 @@ using System.Linq;
 using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
+using Dominio;
+using Negocio;
 
 namespace expresssolution
 {
@@ -15,9 +17,32 @@ namespace expresssolution
         }
         protected void btnRegistrarse_Click(object sender, EventArgs e)
         {
+            Usuario usuario = new Usuario();
+            UsuarioNegocio negocio = new UsuarioNegocio();
             try
             {
-                Response.Redirect("Perfil.aspx", false);
+                usuario.Nombre = txtNombre.Text;
+                usuario.Apellido = txtApellido.Text;
+                usuario.Email = txtEmail.Text;
+                usuario.Pass = txtPass.Text;
+                usuario.TipoUsuario = "CLIENTE";
+                usuario.ID = negocio.Registrarse(usuario);
+                if(usuario.ID > 0)
+                {
+                    /* que verifique si no se esta logueado ya, ejemplo un telefonista creando un usuario
+                     * if(logueado){
+                        Response.Redirect("ListadoIncidencias.aspx", false);
+                     * } else { */
+                    Session.Add("Usuario", usuario);
+                    /* }
+                    */
+                    Response.Redirect("Perfil.aspx", false);
+                }
+                else
+                {
+                    Session.Add("error", "No se pudo proceder con el registro.");
+                    Response.Redirect("Error.aspx", false);
+                }
             }
             catch (Exception ex)
             {
