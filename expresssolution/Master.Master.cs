@@ -13,7 +13,7 @@ namespace expresssolution
         protected void Page_Load(object sender, EventArgs e)
         {
 
-            if(!(Page is Login || Page is Default || Page is Registro))
+            if(!(Page is Login || Page is Default || Page is Registro || Page is Error))
             {
                 if (!seguridad.SessionActiva(Session["usuario"]))
                 {

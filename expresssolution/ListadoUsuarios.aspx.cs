@@ -23,5 +23,19 @@ namespace expresssolution
                 throw ex;
             }
         }
+
+        protected void dgvListaUsuarios_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            try
+            {
+                Session.Add("IdAModificar", dgvListaUsuarios.AccessKey.ToString());
+                Response.Redirect("Perfil.aspx", false);
+            }
+            catch (Exception ex)
+            {
+                Session.Add("error", ex.ToString());
+                Response.Redirect("Error.aspx", false);
+            }
+        }
     }
 }

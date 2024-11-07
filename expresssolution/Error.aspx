@@ -3,4 +3,5 @@
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
     <h2>hubo un error :(</h2>
+    <asp:Label Text="" runat="server" ID="lblError"/>
 </asp:Content>

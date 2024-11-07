@@ -18,14 +18,16 @@ namespace Negocio
 
             try
             {
-                datos.setearConsulta("SELECT U.ID, TU.TipoUsuario, U.Nombre, U.Apellido FROM USUARIO U, TIPO_USUARIO TU WHERE U.IDTipoUsuario = TU.ID ORDER BY TU.TipoUsuario ASC;");
+                datos.setearConsulta("SELECT U.ID, U.IDTipoUsuario, TU.TipoUsuario, U.Nombre, U.Apellido FROM USUARIO U, TIPO_USUARIO TU WHERE U.IDTipoUsuario = TU.ID ORDER BY TU.TipoUsuario ASC");
                 datos.ejecutarLectura();
 
                 while (datos.Lector.Read())
                 {
                     Usuario aux = new Usuario();
                     aux.ID = (int)datos.Lector["Id"];
-                    aux.TipoUsuario = (string)datos.Lector["TipoUsuario"];
+                    aux.tipoUsuario = new TipoUsuario();
+                    aux.tipoUsuario.Id = (int)datos.Lector["IDTipoUsuario"];
+                    aux.tipoUsuario.Descripcion = (string)datos.Lector["TipoUsuario"];
                     aux.Nombre = (string)datos.Lector["Nombre"];
                     aux.Apellido = (string)datos.Lector["Apellido"];
                     lista.Add(aux);
@@ -49,7 +51,7 @@ namespace Negocio
             AccesoDatos datos = new AccesoDatos();
             try
             {
-                datos.setearConsulta("sELECT U.ID, TU.TipoUsuario, U.Nombre, U.Apellido FROM USUARIO U, TIPO_USUARIO TU WHERE @Email = U.Email AND @Pass = U.Pass AND U.IDTipoUsuario = TU.ID;");
+                datos.setearConsulta("SELECT U.ID, U.IDTipoUsuario, TU.TipoUsuario, U.Nombre, U.Apellido FROM USUARIO U, TIPO_USUARIO TU WHERE @Email = U.Email AND @Pass = U.Pass AND U.IDTipoUsuario = TU.ID");
                 datos.setearParametro("@Email", usuario.Email);
                 datos.setearParametro("@Pass", usuario.Pass);
                 datos.ejecutarLectura();
@@ -57,7 +59,9 @@ namespace Negocio
                 while (datos.Lector.Read())
                 {
                     usuario.ID = (int)datos.Lector["ID"];
-                    usuario.TipoUsuario = (string)datos.Lector["TipoUsuario"];
+                    usuario.tipoUsuario = new TipoUsuario();
+                    usuario.tipoUsuario.Descripcion = (string)datos.Lector["TipoUsuario"];
+                    usuario.tipoUsuario.Id = (int)datos.Lector["IDTipoUsuario"];
                     usuario.Nombre = (string)datos.Lector["Nombre"];
                     usuario.Apellido = (string)datos.Lector["Apellido"];
                     return true;

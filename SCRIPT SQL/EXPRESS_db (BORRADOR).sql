@@ -128,15 +128,22 @@ INSERT INTO USUARIO (IDTipoUsuario, Nombre, Apellido, Email, Pass) VALUES
 
 
 
+--///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+
 -- COMANDOS
 USE EXPRESS_SOLUTIONS_DB_borrador
+GO
 
 -- SELECT TODO
 SELECT * FROM USUARIO;
+GO
 
 -- Modificar campo email en tabla usuarios para que sea unique
 ALTER TABLE USUARIO
 ADD CONSTRAINT U_Email UNIQUE (email);
+GO
+
 
 -- REGISTRAR
 CREATE or ALTER PROCEDURE RegistrarUsuario (
@@ -150,8 +157,75 @@ AS BEGIN
 	OUTPUT inserted.Id
 	VALUES(@Nombre, @Apellido, @Email, @Pass, 1) --Es 1 ya que al registrar, automaticamente te identifica como cliente
 END
+GO
 
 -- EJEMPLO
 EXEC RegistrarUsuario 'Braian', 'Pirelli', 'braian@mail', 'soybraian';
+GO
 
 
+
+--///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+
+CREATE OR ALTER PROCEDURE MODIFICAR_USUARIO(
+	@ID INT,
+	@ID_TIPO_USUARIO INT,
+	@NOMBRE NVARCHAR(50), 
+	@APELLIDO NVARCHAR(50),
+	@EMAIL NVARCHAR(50),
+	@PASS NVARCHAR(50)
+)
+AS
+BEGIN
+	BEGIN TRY
+		BEGIN TRANSACTION
+			UPDATE USUARIO 
+			SET IDTipoUsuario = @ID_TIPO_USUARIO, Nombre = @NOMBRE, Apellido = @APELLIDO, Email = @EMAIL, Pass = @PASS
+			WHERE ID = @ID
+		COMMIT TRANSACTION
+	END TRY
+	BEGIN CATCH
+		IF (@@TRANCOUNT > 0)
+			ROLLBACK TRANSACTION
+		RAISERROR('SE PRODUJO UN ERROR AL REALIZAR LA MODIFICACION DEL USUARIO INTENTE DE NUEVO MAS TARDE!', 16, 10)
+	END CATCH
+END
+
+
+--///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+
+CREATE OR ALTER FUNCTION TELEFONISTA_SIN_INCIDENCIAS( @ID INT )
+RETURNS INT
+AS
+BEGIN
+	DECLARE @CANTIDAD INT
+
+
+	SELECT @CANTIDAD = COUNT(*)
+	FROM USUARIOS_X_INCIDENCIA AS UXI
+	INNER JOIN INCIDENCIAS AS I ON I.ID = UXI.IDIncidencia
+	WHERE UXI.IDTelefonista = @ID
+	AND I.IDEstado NOT IN('CERRADO', 'RESUELTO')
+
+	RETURN @CANTIDAD
+END
+
+
+--///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+
+CREATE OR ALTER PROCEDURE BUSCAR_USUARIO(
+	@ID INT
+)
+AS
+BEGIN
+	BEGIN TRY
+		SELECT IDTipoUsuario, Nombre, Apellido, Email, Pass FROM USUARIO -- EL ID TIPO DE USUARIO ES PARA PASAR COMO DEFAULT A LA DDL TIPO USUARIO
+		WHERE ID = @ID
+	END TRY
+	BEGIN CATCH
+		RAISERROR('SE PRODUJO UN ERROR USUARIO INCORRECTO O NO EXISTE!', 16, 10)
+	END CATCH
+END

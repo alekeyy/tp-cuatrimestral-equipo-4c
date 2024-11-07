@@ -46,6 +46,7 @@
     <Compile Include="Prioridad.cs" />
     <Compile Include="Tipo.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="TipoUsuario.cs" />
     <Compile Include="Usuario.cs" />
     <Compile Include="UsuarioXIncidencia.cs" />
   </ItemGroup>

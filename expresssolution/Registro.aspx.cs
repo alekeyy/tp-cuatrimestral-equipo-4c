@@ -25,7 +25,7 @@ namespace expresssolution
                 usuario.Apellido = txtApellido.Text;
                 usuario.Email = txtEmail.Text;
                 usuario.Pass = txtPass.Text;
-                usuario.TipoUsuario = "CLIENTE";
+                usuario.tipoUsuario.Descripcion = "CLIENTE";
                 usuario.ID = negocio.Registrarse(usuario);
                 if(usuario.ID > 0)
                 {

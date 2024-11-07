@@ -4,21 +4,6 @@
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
         <h3>Bienvenido a la seccion de vista de incidentes</h3>
         <br />
-       <%-- 
-        <br />
-        / asignados 
-        <br />
-        / personales 
-        <br />
-        / totales 
-        <br />
-        (depende el usuario que ingrese)</h3>
-    <p>
-        (por ahora se tiene precargada la lista de tipos de incidentes para que el dgv no quede vacio,
-        <br />
-        y tengamos una vista de como quedaria).
-
-    </p>--%>
 
     <asp:GridView ID="dgvListaIncidenciasAsignadas" runat="server" CssClass="table table-active table-bordered"
         AutoGenerateColumns="false"

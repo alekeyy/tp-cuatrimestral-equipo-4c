@@ -5,15 +5,15 @@
     <h3>Lista Usuarios</h3>
 
     <asp:GridView ID="dgvListaUsuarios" runat="server" CssClass="table table-light"
-    AutoGenerateColumns="false"
+    AutoGenerateColumns="false" OnSelectedIndexChanged="dgvListaUsuarios_SelectedIndexChanged"
     >
     <Columns>
         <asp:BoundField HeaderText="ID" DataField="Id"/>
         <asp:BoundField HeaderText="Nombre" DataField="Nombre"/>
         <asp:BoundField HeaderText="Apellido" DataField="Apellido"/>
-        <asp:BoundField HeaderText="Tipo Usuario" DataField="TipoUsuario"/>
+        <asp:BoundField HeaderText="Tipo Usuario" DataField="tipoUsuario.Descripcion"/>
         <asp:BoundField HeaderText="Correo" DataField="Email"/>
-        <asp:BoundField HeaderText="Nivel de acceso" DataField="IDTipoUsuario"/>
+        <asp:BoundField HeaderText="Nivel de acceso" DataField="tipoUsuario.Id"/>
         <asp:CommandField HeaderText="Accion" ShowSelectButton="true" SelectText=" Modificar " />
     </Columns>
     </asp:GridView>

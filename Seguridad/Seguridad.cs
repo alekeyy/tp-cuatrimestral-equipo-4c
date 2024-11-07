@@ -28,7 +28,7 @@ namespace Seguridad
             Usuario usuario = user != null ? (Usuario)user : null;
             if (usuario != null)
             {
-                if(usuario.TipoUsuario == "ADMINISTRADOR")
+                if(usuario.tipoUsuario.Descripcion == "ADMINISTRADOR")
                 {
                     return true;
                 }
@@ -40,7 +40,7 @@ namespace Seguridad
             Usuario usuario = user != null ? (Usuario)user : null;
             if (usuario != null)
             {
-                if (usuario.TipoUsuario == "TELEFONISTA")
+                if (usuario.tipoUsuario.Descripcion == "TELEFONISTA")
                 {
                     return true;
                 }
@@ -52,7 +52,7 @@ namespace Seguridad
             Usuario usuario = user != null ? (Usuario)user : null;
             if (usuario != null)
             {
-                if (usuario.TipoUsuario == "SUPERVISOR")
+                if (usuario.tipoUsuario.Descripcion == "SUPERVISOR")
                 {
                     return true;
                 }

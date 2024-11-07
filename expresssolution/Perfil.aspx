@@ -8,7 +8,8 @@
         <div class="col-3">
             <div class="mb-3">
                 <asp:Label Text="Tipo Usuario: " runat="server" CssClass="form-label" />
-                <asp:TextBox runat="server" CssClass="form-control" />
+            <asp:DropDownList runat="server" ID="ddlTipoUsuario" CssClass="form-control">
+            </asp:DropDownList>
                 <asp:Label Text="Nombre: " runat="server" CssClass="form-label" />
                 <asp:TextBox runat="server" CssClass="form-control" />
                 <asp:Label Text="Apellido: " runat="server" CssClass="form-label" />
@@ -21,8 +22,8 @@
     <div class="row">
         <div class="col-3">
             <div class="mb-3">
-                <asp:Button Text="Aceptar" runat="server" CssClass="btn btn-primary" />
-                <asp:Button Text="Cancelar" runat="server" CssClass="btn btn-secondary" />
+                <asp:Button Text="Aceptar" ID="btnAceptar" runat="server" CssClass="btn btn-primary" OnClick="btnAceptar_Click" />
+                <asp:Button Text="Cancelar" ID="btnCancelar" runat="server" CssClass="btn btn-secondary" OnClick="btnCancelar_Click" />
             </div>
         </div>
     </div>

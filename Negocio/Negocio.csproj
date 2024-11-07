@@ -44,6 +44,7 @@
   <ItemGroup>
     <Compile Include="IncidenciaNegocio.cs" />
     <Compile Include="PrioridadNegocio.cs" />
+    <Compile Include="TipoUsuarioNegocio.cs" />
     <Compile Include="UsuarioNegocio.cs" />
     <Compile Include="UsuarioXIncidenciaNegocio.cs" />
     <Compile Include="TipoNegocio.cs" />

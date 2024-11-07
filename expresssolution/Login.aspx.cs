@@ -29,7 +29,7 @@ namespace expresssolution
                 if (negocio.Login(usuario))
                 {
                     Session.Add("Usuario", usuario);
-                    Response.Redirect("Default.aspx", false);
+                    Response.Redirect("Principal.aspx", false);
                 } else
                 {
                     Session.Add("Error", "Usuario o contraseña incorrectos");
@@ -38,7 +38,8 @@ namespace expresssolution
             }
             catch (Exception ex)
             {
-                throw ex;
+                Session.Add("Error", ex.ToString());
+                Response.Redirect("Error.aspx", false);
             }
         }
         protected void btnCancelar_Click(object sender, EventArgs e)
