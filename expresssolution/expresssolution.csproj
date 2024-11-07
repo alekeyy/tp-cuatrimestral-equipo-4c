@@ -237,6 +237,10 @@
       <Project>{b6a811be-bae7-4696-856a-10dd4d5d003c}</Project>
       <Name>Negocio</Name>
     </ProjectReference>
+    <ProjectReference Include="..\Seguridad\Seguridad.csproj">
+      <Project>{414987c8-d492-4b29-99d1-26a7fca3c15b}</Project>
+      <Name>Seguridad</Name>
+    </ProjectReference>
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>

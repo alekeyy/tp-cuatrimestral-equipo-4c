@@ -4,6 +4,8 @@ using System.Linq;
 using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
+using Dominio;
+using Negocio;
 
 namespace expresssolution
 {
@@ -16,9 +18,23 @@ namespace expresssolution
 
         protected void btnIngresar_Click(object sender, EventArgs e)
         {
+            Usuario usuario = new Usuario();
+            UsuarioNegocio negocio = new UsuarioNegocio();
+
             try
             {
-                Response.Redirect("Inicio.aspx", false);
+                usuario.Email = txtEmail.Text;
+                usuario.Pass = txtPass.Text;
+
+                if (negocio.Login(usuario))
+                {
+                    Session.Add("Usuario", usuario);
+                    Response.Redirect("Default.aspx", false);
+                } else
+                {
+                    Session.Add("Error", "Usuario o contraseña incorrectos");
+                    Response.Redirect("Error.aspx", false);
+                }
             }
             catch (Exception ex)
             {

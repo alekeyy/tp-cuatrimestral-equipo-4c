@@ -1,4 +1,4 @@
-﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Master.Master" AutoEventWireup="true" CodeBehind="Login.aspx.cs" Inherits="expresssolution.Login" %>
+﻿<%@ Page Title="Ingreso" Language="C#" MasterPageFile="~/Master.Master" AutoEventWireup="true" CodeBehind="Login.aspx.cs" Inherits="expresssolution.Login" %>
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
@@ -7,10 +7,10 @@
     <div class="row">
         <div class="col">
             <div class="mb-3">
-                <asp:Label Text="Usuario: " runat="server" CssClass="form-label" />
-                <asp:TextBox runat="server" CssClass="form-control" />
+                <asp:Label Text="Correo: " runat="server" CssClass="form-label" />
+                <asp:TextBox runat="server" CssClass="form-control" ID="txtEmail"/>
                 <asp:Label Text="Contraseña: " runat="server" CssClass="form-label" />
-                <asp:TextBox runat="server" CssClass="form-control" />
+                <asp:TextBox runat="server" CssClass="form-control" ID="txtPass"/>
             </div>
         </div>
     </div>

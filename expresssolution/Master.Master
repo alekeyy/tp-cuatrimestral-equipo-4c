@@ -19,7 +19,7 @@
     <form id="form1" runat="server">
         <nav class="navbar navbar-expand-sm navbar-toggleable-sm navbar-dark bg-dark">
             <div class="container">
-                <a class="navbar-brand" runat="server" href="~/Default">EXPRESS SOLUTIONS</a>
+                <a class="navbar-brand" runat="server" href="~/Default.aspx">EXPRESS SOLUTIONS</a>
                 <button type="button" class="navbar-toggler" data-bs-toggle="collapse" data-bs-target=".navbar-collapse" title="Alternar navegación" aria-controls="navbarSupportedContent"
                     aria-expanded="false" aria-label="Toggle navigation">
                     <span class="navbar-toggler-icon"></span>
@@ -27,6 +27,8 @@
                 <div class="collapse navbar-collapse d-sm-inline-flex">
                     <ul class="navbar-nav flex-grow-1 me-auto mb-lg-0">
 
+                        <%if (!Seguridad.seguridad.SessionActiva(Session["usuario"]))
+                            {%>
                         <li class="nav-item" >
                             <a class="nav-link btn btn-outline-success" runat="server" href="~/Login.aspx">Login</a>
                         </li>
@@ -34,10 +36,16 @@
                         <li class="nav-item">
                             <a class="nav-link btn btn-outline-primary" runat="server" href="~/Registro.aspx">Registrarse</a>
                         </li>
+                        <%} else { %>
+                        
+                        <li class="nav-item">
+                            <asp:Button runat="server" ID="btnCerrarSession" Text="Cerrar Sesion" CssClass="btn btn-danger" OnClick="btnCerrarSession_Click" />
+                        </li>
 
                         <li class="nav-item">
                             <a class="nav-link btn btn-outline-secondary" runat="server" href="~/Perfil.aspx">Mi Perfil</a>
                         </li>
+                        <% } %>
                     </ul>
                 </div>
             </div>

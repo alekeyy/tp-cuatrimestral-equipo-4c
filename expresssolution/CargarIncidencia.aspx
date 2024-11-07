@@ -1,4 +1,4 @@
-﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Master.Master" AutoEventWireup="true" CodeBehind="CargarIncidencia.aspx.cs" Inherits="expresssolution.CargarIncidencia" %>
+﻿<%@ Page Title="Cargar Incidencia" Language="C#" MasterPageFile="~/Master.Master" AutoEventWireup="true" CodeBehind="CargarIncidencia.aspx.cs" Inherits="expresssolution.CargarIncidencia" %>
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">

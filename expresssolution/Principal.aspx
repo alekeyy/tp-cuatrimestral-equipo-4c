@@ -1,4 +1,4 @@
-﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Master.Master" AutoEventWireup="true" CodeBehind="Principal.aspx.cs" Inherits="expresssolution.Principal" %>
+﻿<%@ Page Title="Principal - Menu" Language="C#" MasterPageFile="~/Master.Master" AutoEventWireup="true" CodeBehind="Principal.aspx.cs" Inherits="expresssolution.Principal" %>
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
@@ -14,7 +14,7 @@
                 <br />
                 y en base a esto realizar modificaciones / actualizaciones, etc...
                 <br />
-                <a href="ListaIncidencias.aspx">
+                <a href="ListadoIncidencias.aspx">
                     <asp:Image ImageUrl="~/images/lista.png" runat="server" Width="300px"/>
                 </a>
             </p>
@@ -63,7 +63,7 @@
                 <br />
                 pero ~no modificarlas~
                 <br />
-                <a href="ListaIncidencias.aspx">
+                <a href="ListadoIncidencias.aspx">
                     <asp:Image ImageUrl="~/images/lista.png" runat="server" Width="300px"/>
                 </a>
             </p>
@@ -98,7 +98,7 @@
                 <br />
                 y en base a esto realizar modificaciones / actualizaciones, etc...
                 <br />
-                <a href="ListaIncidencias.aspx">
+                <a href="ListadoIncidencias.aspx">
                     <asp:Image ImageUrl="~/images/lista.png" runat="server" Width="300px"/>
                 </a>
             </p>
@@ -136,7 +136,7 @@
                 <br />
                 Y EN BASE A ESTA MODIFICAR NIVELES DE ACCESO O DATOS
                 <br />
-                <a href="#">
+                <a href="ListadoUsuarios.aspx">
                     <asp:Image ImageUrl="~/images/usuarios.png" runat="server" Width="300px"/>
                 </a>
             </p>
@@ -162,7 +162,7 @@
                 y en base a esto MODIFICAR SOLO EL TELEFONISTA ASIGNADO
                 <br />
                 <br />
-                <a href="ListaIncidencias.aspx">
+                <a href="ListadoIncidencias.aspx">
                     <asp:Image ImageUrl="~/images/lista.png" runat="server" Width="300px"/>
                 </a>
             </p>
@@ -176,7 +176,7 @@
                 <br />
                 <br />
                 <br />
-                <a href="#">
+                <a href="ListadoUsuarios.aspx">
                     <asp:Image ImageUrl="~/images/usuarios.png" runat="server" Width="300px"/>
                 </a>
             </p>
