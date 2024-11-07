@@ -17,7 +17,7 @@ namespace expresssolution
         {
             try
             {
-                Response.Redirect("MiPerfil.aspx", false);
+                Response.Redirect("Perfil.aspx", false);
             }
             catch (Exception ex)
             {

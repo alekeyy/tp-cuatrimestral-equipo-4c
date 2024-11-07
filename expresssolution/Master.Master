@@ -57,8 +57,30 @@
             <hr />
             <footer>
                 <a href="About.aspx">Sobre nosotros</a>
-                <p>ESTE ES EL FOOTER Y LO TENEMOS QUE PERSONALIZAR</p>
-                <p>AGREGAMOS NUESTRAS RRSS :)</p>
+                <h4>Proyecto Cuatrimestral Programacion 3 <br /> Realizado en conjunto por:</h4>
+                <div class="row">
+                    <div class="col">
+
+                        <a href="https://www.linkedin.com/in/braian-pirelli-399838221/" target="_blank">
+                            <img src="./images/Linkedin_Icon.png" width="100px" alt="linkedin" /> 
+                        </a>
+                        <a href="https://github.com/BraianPirelli?tab=overview&from=2024-10-01&to=2024-10-31" target="_blank">
+                            <img src="./images/Github_icon.png" width="130px" alt="github" />
+                        </a>
+                        <p>Braian Pirelli</p>
+                    
+                    </div>
+                    <div class="col">
+                    
+                        <a href="https://www.linkedin.com/in/alexcarvajalmatias/" target="_blank">
+                            <img src="./images/Linkedin_Icon.png" width="100px" alt="linkedin" />
+                        </a>
+                        <a href="https://github.com/alekeyy?tab=overview&from=2024-11-01&to=2024-11-06" target="_blank">
+                            <img src="./images/Github_icon.png" width="130px" alt="github" />
+                        </a>
+                        <p>Alexander Carvajal</p>
+                    </div>
+                </div>
             </footer>
         </div>
     </form>
