@@ -24,7 +24,8 @@
                     </div>
                     <p>¿Ya tenes una cuenta existente? <a href="Login.aspx" class="card-text">Ingresa</a></p>
                     <div class="mt-3">
-                        <asp:Button Text="Registrarse" runat="server" CssClass="btn btn-primary" ID="Button1" OnClick="btnRegistrarse_Click" />
+                        <asp:Button 
+                            Text="Registrarse" runat="server" CssClass="btn btn-primary" ID="btnRegistrarse" OnClick="btnRegistrarse_Click" />
                         <asp:Button Text="Cancelar" runat="server" CssClass="btn btn-secondary" ID="Button2" OnClick="btnCancelar_Click" />
                     </div>
                   </div>
@@ -32,8 +33,5 @@
               </div>
             </div>
         </div>
-    </div>PD BORRAR ESTO ASI SE CENTRA
-        (en esta pantalla debera actuar de diferentes maneras dependiendo de quien sea el que accedio:
-         <br /> - un usuario nuevo.
-         <br /> - un telefonista registrando a un usuario)
+    </div>
 </asp:Content>

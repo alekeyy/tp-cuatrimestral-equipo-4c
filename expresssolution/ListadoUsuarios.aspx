@@ -13,7 +13,6 @@
                     <asp:BoundField HeaderText="Apellido" DataField="Apellido" />
                     <asp:BoundField HeaderText="Tipo Usuario" DataField="tipoUsuario.Descripcion" />
                     <asp:BoundField HeaderText="Correo" DataField="Email" />
-                    <asp:BoundField HeaderText="Nivel de acceso" DataField="tipoUsuario.Id" />
                     <asp:CommandField HeaderText="Accion" ShowSelectButton="true" SelectText=" Modificar " />
                 </Columns>
             </asp:GridView>

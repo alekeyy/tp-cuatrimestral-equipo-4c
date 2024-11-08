@@ -25,7 +25,7 @@
             </div>
         </div>
 
-        <%if (!(Seguridad.seguridad.EsCliente(Session["usuario"]))){ %>
+         <%if (!(Seguridad.seguridad.EsCliente(Session["usuario"])) && (!(Seguridad.seguridad.EsSupervisor(Session["usuario"])))){ %>
         <div class="col">
             <div class="card card-custom d-flex align-items-center">
               <asp:Image ImageUrl="~/images/agregarUsuario.png" runat="server" Width="300px" CssClass="card-img-top mt-2" AlternateText="Imagen Funcionalidad Lista Incidencias"/>
@@ -36,6 +36,10 @@
               </div>
             </div>
         </div>
+        
+        <%} %>
+
+        <%if (!(Seguridad.seguridad.EsCliente(Session["usuario"]))){ %>
         <div class="col">
             <div class="card card-custom d-flex align-items-center">
               <asp:Image ImageUrl="~/images/usuarios.png" runat="server" Width="300px" CssClass="card-img-top mt-2" AlternateText="Imagen Funcionalidad Lista Usuarios"/>

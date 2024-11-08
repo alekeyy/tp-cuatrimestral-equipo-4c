@@ -28,10 +28,10 @@ namespace expresssolution
             {
                 if (Seguridad.seguridad.EsAdmin(Session["usuario"])) 
                 {
-                    dgvListaUsuarios.Columns[6].Visible = true;
+                    dgvListaUsuarios.Columns[5].Visible = true;
                 } else
                 {
-                    dgvListaUsuarios.Columns[6].Visible = false;
+                    dgvListaUsuarios.Columns[5].Visible = false;
                 }
             }
         }

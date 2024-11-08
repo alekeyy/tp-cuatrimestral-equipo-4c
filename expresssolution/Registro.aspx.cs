@@ -13,38 +13,37 @@ namespace expresssolution
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-
+            if ((Usuario)Session["usuario"] != null)
+            {
+                btnRegistrarse.Text = "Crear Usuario";
+            }
         }
         protected void btnRegistrarse_Click(object sender, EventArgs e)
         {
             Usuario usuario = new Usuario();
             UsuarioNegocio negocio = new UsuarioNegocio();
+
             try
             {
+
                 usuario.Nombre = txtNombre.Text;
                 usuario.Apellido = txtApellido.Text;
                 usuario.Email = txtEmail.Text;
                 usuario.Pass = txtPass.Text;
+                usuario.tipoUsuario = new TipoUsuario();
+                usuario.tipoUsuario.Id = 1;
                 usuario.tipoUsuario.Descripcion = "CLIENTE";
                 usuario.ID = negocio.Registrarse(usuario);
                 if(usuario.ID > 0)
                 {
-                    /* que verifique si no se esta logueado ya, ejemplo un telefonista creando un usuario
-                     * if(logueado){
-                        Response.Redirect("ListadoIncidencias.aspx", false);
-                     * } else { */
-
-                    // -> SE VERIFICA SI HAY UN USUARIO EN SESION
-                    //    PORQUE DE HABERLO SIGNIFICA QUE ES OTRO USUARIO TRATANDO DE CARGAR UNO NUEVO
-                    //    Y DE SER ASI, NO SE DEBE GUARDAR EL NUEVO USUARIO EN SESION, SOLO REDIRECCIONAR.
-                    // 
-                    //    SI NO HUBIERA UN USUARIO EN SESSION, ES UN USUARIO NUEVO TRATANDO DE REGISTRARSE.
-                    //    ENTONCES SI SE GUARDAN SUS DATOS EN SESSION.
                     if ((Usuario)Session["Usuario"] == null)
+                    {
                         Session["Usuario"] = usuario;
-                    /* }
-                    */
-                    Response.Redirect("Principal.aspx", false);
+                        Response.Redirect("Principal.aspx", false);
+                    } else
+                    {
+                        Response.Redirect("Exito.aspx", false);
+                    }
                 }
                 else
                 {

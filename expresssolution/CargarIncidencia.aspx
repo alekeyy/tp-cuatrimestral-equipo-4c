@@ -5,12 +5,11 @@
     <div class="row">
         <div class="col">
             <h3>Bienvenido a la seccion de carga de incidencias</h3>
-            <p>
+            <% /* %>
                 (en este caso dependiendo el usuario que acceda hay que validarlo 
                 <br />
                 y en base a esto seran las opciones / acciones que se le permitiran).
-            </p>
-            <div class="row">
+            <% */ %>
                 <div class="col">
                     <asp:Label Text="Nombre: " runat="server" CssClass="form-label"/>
                     <asp:TextBox runat="server" ID="txtNombreIncidencia" CssClass="form-control"/>
@@ -43,24 +42,20 @@
                     </asp:DropDownList>
                 </div>
             </div>
-
-            <div class="row">
-                <div class="col">
+            <div class="col">
                     <asp:Label Text="Telefonista: " runat="server" CssClass="form-label"/>
                     <asp:DropDownList runat="server" ID="ddlTelefonista" CssClass="form-control">
                     </asp:DropDownList>
-                </div>
-                <div class="col">
+            </div>
+            <div class="col">
                     <asp:Label Text="Comentario: " runat="server" CssClass="form-label"/>
                     <asp:TextBox runat="server" ID="txtComentarioIncidencia" CssClass="form-control"/>
-                </div>
             </div>
             <div class="row">
-                <div class="col">
+                <div class="col mt-3">
                     <asp:Button Text="Agregar" runat="server" ID="btnAgregar" CssClass="btn btn-success" OnClick="btnAgregar_Click"/>
                 </div>
             </div>
         </div>
-    </div>
 
 </asp:Content>

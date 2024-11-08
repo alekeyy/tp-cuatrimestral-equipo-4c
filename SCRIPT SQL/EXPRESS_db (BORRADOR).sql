@@ -244,6 +244,19 @@ EXEC BUSCAR_USUARIO @ID
 --///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
 -- FIX BOLUDO, TIPOS USUARIOS
-
+SELECT * FROM USUARIO;
 UPDATE TIPO_USUARIO SET TipoUsuario = 'SUPERVISOR' WHERE ID = 3;
 UPDATE TIPO_USUARIO SET TipoUsuario = 'ADMINISTRADOR' WHERE ID = 4;
+UPDATE USUARIO SET IDTipoUsuario = 3 WHERE ID=2;
+UPDATE USUARIO SET IDTipoUsuario = 3 WHERE ID=12;
+UPDATE USUARIO SET IDTipoUsuario = 4 WHERE ID=1;
+UPDATE USUARIO SET IDTipoUsuario = 4 WHERE ID=11;
+
+--borro
+SELECT U.ID, U.IDTipoUsuario, TU.TipoUsuario, U.Nombre, U.Apellido, U.Email 
+FROM USUARIO U, TIPO_USUARIO TU 
+WHERE U.IDTipoUsuario = TU.ID 
+ORDER BY U.IDTipoUsuario DESC;
+
+SELECT * FROM INCIDENCIAS
+SELECT * FROM USUARIOS_X_INCIDENCIA;
