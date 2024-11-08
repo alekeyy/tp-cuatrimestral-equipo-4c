@@ -22,15 +22,15 @@ C:\Users\Usuario\Desktop\UTN\PROG 3\tp-cuatrimestral-equipo-4c\expresssolution\a
 C:\Users\Usuario\Desktop\UTN\PROG 3\tp-cuatrimestral-equipo-4c\expresssolution\accesoDatos\obj\Debug\accesoDatos.csproj.CoreCompileInputs.cache
 C:\Users\Usuario\Desktop\UTN\PROG 3\tp-cuatrimestral-equipo-4c\expresssolution\accesoDatos\obj\Debug\accesoDatos.dll
 C:\Users\Usuario\Desktop\UTN\PROG 3\tp-cuatrimestral-equipo-4c\expresssolution\accesoDatos\obj\Debug\accesoDatos.pdb
-C:\Users\poky1975\Documents\GitHub\tp-cuatrimestral-equipo-4c\accesoDatos\bin\Debug\accesoDatos.dll
-C:\Users\poky1975\Documents\GitHub\tp-cuatrimestral-equipo-4c\accesoDatos\bin\Debug\accesoDatos.pdb
-C:\Users\poky1975\Documents\GitHub\tp-cuatrimestral-equipo-4c\accesoDatos\obj\Debug\accesoDatos.csproj.AssemblyReference.cache
-C:\Users\poky1975\Documents\GitHub\tp-cuatrimestral-equipo-4c\accesoDatos\obj\Debug\accesoDatos.csproj.CoreCompileInputs.cache
-C:\Users\poky1975\Documents\GitHub\tp-cuatrimestral-equipo-4c\accesoDatos\obj\Debug\accesoDatos.dll
-C:\Users\poky1975\Documents\GitHub\tp-cuatrimestral-equipo-4c\accesoDatos\obj\Debug\accesoDatos.pdb
 C:\Users\Usuario\Desktop\UTN\PROG 3\tp-cuatrimestral-equipo-4c\tp-cuatrimestral-equipo-4c\accesoDatos\bin\Debug\accesoDatos.dll
 C:\Users\Usuario\Desktop\UTN\PROG 3\tp-cuatrimestral-equipo-4c\tp-cuatrimestral-equipo-4c\accesoDatos\bin\Debug\accesoDatos.pdb
 C:\Users\Usuario\Desktop\UTN\PROG 3\tp-cuatrimestral-equipo-4c\tp-cuatrimestral-equipo-4c\accesoDatos\obj\Debug\accesoDatos.csproj.AssemblyReference.cache
 C:\Users\Usuario\Desktop\UTN\PROG 3\tp-cuatrimestral-equipo-4c\tp-cuatrimestral-equipo-4c\accesoDatos\obj\Debug\accesoDatos.csproj.CoreCompileInputs.cache
 C:\Users\Usuario\Desktop\UTN\PROG 3\tp-cuatrimestral-equipo-4c\tp-cuatrimestral-equipo-4c\accesoDatos\obj\Debug\accesoDatos.dll
 C:\Users\Usuario\Desktop\UTN\PROG 3\tp-cuatrimestral-equipo-4c\tp-cuatrimestral-equipo-4c\accesoDatos\obj\Debug\accesoDatos.pdb
+C:\Users\poky1975\Documents\GitHub\tp-cuatrimestral-equipo-4c\accesoDatos\bin\Debug\accesoDatos.dll
+C:\Users\poky1975\Documents\GitHub\tp-cuatrimestral-equipo-4c\accesoDatos\bin\Debug\accesoDatos.pdb
+C:\Users\poky1975\Documents\GitHub\tp-cuatrimestral-equipo-4c\accesoDatos\obj\Debug\accesoDatos.csproj.AssemblyReference.cache
+C:\Users\poky1975\Documents\GitHub\tp-cuatrimestral-equipo-4c\accesoDatos\obj\Debug\accesoDatos.csproj.CoreCompileInputs.cache
+C:\Users\poky1975\Documents\GitHub\tp-cuatrimestral-equipo-4c\accesoDatos\obj\Debug\accesoDatos.dll
+C:\Users\poky1975\Documents\GitHub\tp-cuatrimestral-equipo-4c\accesoDatos\obj\Debug\accesoDatos.pdb

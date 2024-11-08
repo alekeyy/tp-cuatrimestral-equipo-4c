@@ -5,6 +5,10 @@ using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
 using Negocio;
+using Dominio;
+using Seguridad;
+using System.Web.Configuration;
+using System.Runtime.CompilerServices;
 
 namespace expresssolution
 {
@@ -12,12 +16,91 @@ namespace expresssolution
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-            TipoUsuarioNegocio tipo = new TipoUsuarioNegocio();
+            try
+            {
+                if (!IsPostBack)
+                {
+                    TipoUsuarioNegocio tipo = new TipoUsuarioNegocio();
+                    ddlTipoUsuario.Enabled = true;
+                    ddlTipoUsuario.DataSource = tipo.listar();
+                    ddlTipoUsuario.DataValueField = "Id";
+                    ddlTipoUsuario.DataTextField = "Descripcion";
+                    ddlTipoUsuario.DataBind();
 
-            ddlTipoUsuario.DataSource = tipo.listar();
-            ddlTipoUsuario.DataValueField = "Id";
-            ddlTipoUsuario.DataTextField = "Descripcion";
-            ddlTipoUsuario.DataBind();
+                    if (Session["Usuario"] != null)
+                    {
+                        Usuario actual = (Usuario)Session["Usuario"];
+
+                        if (seguridad.EsAdmin(actual))
+                        {
+                            if ((string)Session["PaginaAnterior"] == "Lista de usuarios")
+                            {
+                                UsuarioNegocio negocio = new UsuarioNegocio();
+                                Usuario modificar = new Usuario();
+
+                                // se asigna como pagina anterior la pagina actual.
+                                Session["PaginaAnterior"] = "Perfil";
+
+                                // se busca el usuario por id
+                                modificar = negocio.BuscarUsuario((int)Session["IdAModificar"]);
+
+                                // se precargan los datos
+                                ddlTipoUsuario.SelectedIndex = modificar.tipoUsuario.Id - 1;
+                                ddlTipoUsuario.DataBind();
+                                txtNombre.Text = modificar.Nombre;
+                                txtApellido.Text = modificar.Apellido;
+                                txtEmail.Text = modificar.Email;
+
+                                // toca verificar si el usuario modificado es un telefonista
+                                // si es se actua, sino se sigue con normalidad.
+                                if (ddlTipoUsuario.SelectedIndex == (2 - 1))
+                                // se pone 2 que es el nivel de telefonista, se le resta uno para transformarlo en indice.
+                                {
+                                    if (negocio.VerificarIncidenciasTelefonista(modificar.ID) > 0)
+                                    {
+                                        lblTelefonistaOcupado.Text = "No se puede cambiar el tipo de usuario a este telefonista, porque todavia cuenta con incidencias asignadas a el. Primero debera concluirlas.";
+
+                                        lblTelefonistaOcupado.ForeColor = System.Drawing.Color.Red;
+                                        ddlTipoUsuario.Enabled = false;
+                                    }
+                                }
+
+                                Session["UsuarioAModificar"] = modificar;
+                            }
+                            else
+                            {
+                                ddlTipoUsuario.SelectedIndex = actual.tipoUsuario.Id - 1;
+                                ddlTipoUsuario.DataBind();
+                                txtNombre.Text = actual.Nombre;
+                                txtApellido.Text = actual.Apellido;
+                                txtEmail.Text = actual.Email;
+
+
+                                Session["UsuarioAModificar"] = actual;
+                            }
+                        }
+                        else
+                        {
+                            ddlTipoUsuario.SelectedIndex = actual.tipoUsuario.Id - 1;
+                            ddlTipoUsuario.DataBind();
+                            txtNombre.Text = actual.Nombre;
+                            txtApellido.Text = actual.Apellido;
+                            txtEmail.Text = actual.Email;
+
+
+                            Session["UsuarioAModificar"] = actual;
+                        }
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                Session["Error"] = ex.ToString();
+                Response.Redirect("Error.aspx", false);
+            }
+
+
+
         }
 
         protected void btnAceptar_Click(object sender, EventArgs e)
@@ -34,12 +117,13 @@ namespace expresssolution
             // (para saber si el usuario que realiza la accion es admin se verifica la session)
             // (para saber si el admin modifica un usuario se verifica la session,
             // en la cual se cargara en un apartado "session.add("pagAnterior", title <- "nombre de la pagina")...
-            // si el title en la session es ListaUsuarios,
+            // si el title en la session es ListaUsuarios, 
             //      entonces es el admin modificando...
-            // si el title en la sessin es Registro,
+            //      
+            // si el title en la sessin es Registro, <------ se elimino esta opcion por el formato de registro.
             //      es el admin o el telefonista cargando un usuario...
             // si el title en la session es Registro, pero en la session no hay un usuario activo...
-            //      es un cliente tratando de registrarse.
+            //      es un cliente tratando de registrarse. <------ se elimino esta opcion por el formato de registro.
             //
             //
             // en el caso de que el que ingreso a "mi perfil"
@@ -61,11 +145,27 @@ namespace expresssolution
 
             try
             {
+                UsuarioNegocio negocio = new UsuarioNegocio();
+                Usuario modificar = new Usuario();
+
+                modificar.ID = ((Usuario)Session["UsuarioAModificar"]).ID;
+                modificar.tipoUsuario = new TipoUsuario();
+                modificar.tipoUsuario.Id = ddlTipoUsuario.SelectedIndex + 1;
+                modificar.tipoUsuario.Descripcion = ddlTipoUsuario.SelectedValue;
+                modificar.Nombre = txtNombre.Text;
+                modificar.Apellido = txtApellido.Text;
+                modificar.Email = txtEmail.Text;
+                modificar.Pass = ((Usuario)Session["UsuarioAModificar"]).Pass;
+                // puede agregarse el campo para modificar la contraseña solo hay que agregar unas modificaciones en "perfil.aspx" y agregar textbox y label.
+                // ya que la sentencia sql carga la pass, simplemente no se permite modificarla.
+
+                negocio.ModificarUsuario(modificar);
+
                 Response.Redirect("Principal.aspx", false);
             }
             catch (Exception ex)
             {
-                Session.Add("error", ex.ToString());
+                Session["Error"] = ex.ToString();
                 Response.Redirect("Error.aspx", false);
             }
 
@@ -79,7 +179,7 @@ namespace expresssolution
             }
             catch (Exception ex)
             {
-                Session.Add("error", ex.ToString());
+                Session["Error"] = ex.ToString();
                 Response.Redirect("Error.aspx", false);
             }
         }

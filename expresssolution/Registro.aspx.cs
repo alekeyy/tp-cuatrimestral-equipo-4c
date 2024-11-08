@@ -33,20 +33,29 @@ namespace expresssolution
                      * if(logueado){
                         Response.Redirect("ListadoIncidencias.aspx", false);
                      * } else { */
-                    Session.Add("Usuario", usuario);
+
+                    // -> SE VERIFICA SI HAY UN USUARIO EN SESION
+                    //    PORQUE DE HABERLO SIGNIFICA QUE ES OTRO USUARIO TRATANDO DE CARGAR UNO NUEVO
+                    //    Y DE SER ASI, NO SE DEBE GUARDAR EL NUEVO USUARIO EN SESION, SOLO REDIRECCIONAR.
+                    // 
+                    //    SI NO HUBIERA UN USUARIO EN SESSION, ES UN USUARIO NUEVO TRATANDO DE REGISTRARSE.
+                    //    ENTONCES SI SE GUARDAN SUS DATOS EN SESSION.
+                    if ((Usuario)Session["Usuario"] == null)
+                        Session["Usuario"] = usuario;
                     /* }
                     */
-                    Response.Redirect("Perfil.aspx", false);
+                    Response.Redirect("Principal.aspx", false);
                 }
                 else
                 {
-                    Session.Add("error", "No se pudo proceder con el registro.");
+                    Session["Error"] = "No se pudo proceder con el registro.";
                     Response.Redirect("Error.aspx", false);
                 }
             }
             catch (Exception ex)
             {
-                throw ex;
+                Session["Error"] =  ex.ToString();
+                Response.Redirect("Error.aspx", false);
             }
         }
 
@@ -54,11 +63,20 @@ namespace expresssolution
         {
             try
             {
-                Response.Redirect("Default.aspx", false);
+                // si es igual a null significa que un usuario intenta registrarse
+                // si es distinto a null, es otro usuario tratando de cargar un usuario
+                // 
+                // no hace falta realizar mas evaluaciones ya que un usuario "cliente"
+                // no podra acceder a registro si ya esta registrado.
+                if ((Usuario)Session["Usuario"] == null)
+                    Response.Redirect("Default.aspx", false);
+                else
+                    Response.Redirect("Principal.aspx", false);
             }
             catch (Exception ex)
             {
-                throw ex;
+                Session["Error"] = ex.ToString();
+                Response.Redirect("Error.aspx", false);
             }
         }
     }

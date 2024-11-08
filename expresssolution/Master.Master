@@ -4,7 +4,7 @@
 
 <html lang="es">
 <head runat="server">
-<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>EXPRESS SOLUTIONS </title>
@@ -16,7 +16,9 @@
     <link href="Content/bootstrap.min.css" rel="stylesheet" />
 </head>
 <body>
+
     <form id="form1" runat="server">
+        <asp:ScriptManager runat="server" ID="scriptManager1" />
         <nav class="navbar navbar-expand-sm navbar-toggleable-sm navbar-dark bg-dark">
             <div class="container">
                 <a class="navbar-brand" runat="server" href="~/Default.aspx">EXPRESS SOLUTIONS</a>
@@ -29,15 +31,17 @@
 
                         <%if (!Seguridad.seguridad.SessionActiva(Session["Usuario"]))
                             {%>
-                        <li class="nav-item" >
+                        <li class="nav-item">
                             <a class="nav-link btn btn-outline-success" runat="server" href="~/Login.aspx">Login</a>
                         </li>
 
                         <li class="nav-item">
                             <a class="nav-link btn btn-outline-primary" runat="server" href="~/Registro.aspx">Registrarse</a>
                         </li>
-                        <%} else { %>
-                        
+                        <%}
+                            else
+                            { %>
+
                         <li class="nav-item">
                             <asp:Button runat="server" ID="btnCerrarSession" Text="Cerrar Sesion" CssClass="btn btn-danger" OnClick="btnCerrarSession_Click" />
                         </li>
@@ -53,25 +57,27 @@
         <div class="container body-content">
             <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server">
             </asp:ContentPlaceHolder>
-            
+
             <hr />
             <footer>
                 <a href="About.aspx">Sobre nosotros</a>
-                <h4>Proyecto Cuatrimestral Programacion 3 <br /> Realizado en conjunto por:</h4>
+                <h4>Proyecto Cuatrimestral Programacion 3
+                    <br />
+                    Realizado en conjunto por:</h4>
                 <div class="row">
                     <div class="col">
 
                         <a href="https://www.linkedin.com/in/braian-pirelli-399838221/" target="_blank">
-                            <img src="./images/Linkedin_Icon.png" width="100px" alt="linkedin" /> 
+                            <img src="./images/Linkedin_Icon.png" width="100px" alt="linkedin" />
                         </a>
                         <a href="https://github.com/BraianPirelli?tab=overview&from=2024-10-01&to=2024-10-31" target="_blank">
                             <img src="./images/Github_icon.png" width="130px" alt="github" />
                         </a>
                         <p>Braian Pirelli</p>
-                    
+
                     </div>
                     <div class="col">
-                    
+
                         <a href="https://www.linkedin.com/in/alexcarvajalmatias/" target="_blank">
                             <img src="./images/Linkedin_Icon.png" width="100px" alt="linkedin" />
                         </a>

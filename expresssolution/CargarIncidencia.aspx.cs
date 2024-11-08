@@ -12,13 +12,15 @@ namespace expresssolution
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-            TipoNegocio tipo = new TipoNegocio();
-            PrioridadNegocio prioridad = new PrioridadNegocio();
+            try
+            {
+                TipoNegocio tipo = new TipoNegocio();
+                PrioridadNegocio prioridad = new PrioridadNegocio();
 
-            ddlPrioridadIncidencia.DataSource = prioridad.listar();
-            ddlPrioridadIncidencia.DataValueField = "Id";
-            ddlPrioridadIncidencia.DataTextField = "Descripcion";
-            ddlPrioridadIncidencia.DataBind();
+                ddlPrioridadIncidencia.DataSource = prioridad.listar();
+                ddlPrioridadIncidencia.DataValueField = "Id";
+                ddlPrioridadIncidencia.DataTextField = "Descripcion";
+                ddlPrioridadIncidencia.DataBind();
 
             ddlTipoIncidencia.DataSource = tipo.listar();
             ddlTipoIncidencia.DataValueField = "Id";
@@ -30,11 +32,12 @@ namespace expresssolution
         {
             try
             {
-                Response.Redirect("Inicio.aspx", false);
+                Response.Redirect("Principal.aspx", false);
             }
             catch (Exception ex)
             {
-                throw ex;
+                Session["Error"] = ex.ToString();
+                Response.Redirect("Error.aspx", false);
             }
         }
     }

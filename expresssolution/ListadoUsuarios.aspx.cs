@@ -20,7 +20,8 @@ namespace expresssolution
             }
             catch (Exception ex)
             {
-                throw ex;
+                Session["Error"] = ex.ToString();
+                Response.Redirect("Error.aspx", false);
             }
         }
 
@@ -28,12 +29,13 @@ namespace expresssolution
         {
             try
             {
-                Session.Add("IdAModificar", dgvListaUsuarios.AccessKey.ToString());
+                Session["PaginaAnterior"] = Title.ToString();
+                Session["IdAModificar"] = (int)dgvListaUsuarios.SelectedDataKey.Value;
                 Response.Redirect("Perfil.aspx", false);
             }
             catch (Exception ex)
             {
-                Session.Add("error", ex.ToString());
+                Session["Error"] = ex.ToString();
                 Response.Redirect("Error.aspx", false);
             }
         }

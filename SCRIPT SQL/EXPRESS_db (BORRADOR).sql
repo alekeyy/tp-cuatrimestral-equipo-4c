@@ -127,7 +127,6 @@ INSERT INTO USUARIO (IDTipoUsuario, Nombre, Apellido, Email, Pass) VALUES
 (1, 'Henry', 'Gonzalez', 'henry.gonzalez@cliente.com', 'iiijjj')
 
 
-
 --///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
 
@@ -164,7 +163,6 @@ EXEC RegistrarUsuario 'Braian', 'Pirelli', 'braian@mail', 'soybraian';
 GO
 
 
-
 --///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
 
@@ -192,6 +190,9 @@ BEGIN
 	END CATCH
 END
 
+-- EJEMPLO PARA PEGAR EN EL CODEBEHIND
+EXEC MODIFICAR_USUARIO @ID, @ID_TIPO_USUARIO, @NOMBRE, @APELLIDO, @EMAIL, @PASS
+
 
 --///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
@@ -206,11 +207,15 @@ BEGIN
 	SELECT @CANTIDAD = COUNT(*)
 	FROM USUARIOS_X_INCIDENCIA AS UXI
 	INNER JOIN INCIDENCIAS AS I ON I.ID = UXI.IDIncidencia
+	INNER JOIN ESTADO_INCIDENCIA AS EI ON EI.ID = I.IDEstado
 	WHERE UXI.IDTelefonista = @ID
-	AND I.IDEstado NOT IN('CERRADO', 'RESUELTO')
+	AND EI.Descripcion NOT IN('CERRADO', 'RESUELTO')
 
 	RETURN @CANTIDAD
 END
+
+-- EJEMPLO PARA PEGAR EN EL CODEBEHIND
+SELECT DBO.TELEFONISTA_SIN_INCIDENCIAS (@ID)
 
 
 --///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
@@ -229,3 +234,9 @@ BEGIN
 		RAISERROR('SE PRODUJO UN ERROR USUARIO INCORRECTO O NO EXISTE!', 16, 10)
 	END CATCH
 END
+
+-- EJEMPLO PARA PEGAR EN EL CODEBEHIND
+EXEC BUSCAR_USUARIO @ID
+
+
+--///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////

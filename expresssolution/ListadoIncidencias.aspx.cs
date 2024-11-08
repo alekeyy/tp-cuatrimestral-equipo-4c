@@ -23,7 +23,8 @@ namespace expresssolution
             }
             catch (Exception ex)
             {
-                throw ex;
+                Session["Error"] = ex.ToString();
+                Response.Redirect("Error.aspx", false);
             }
 
         }
@@ -36,7 +37,8 @@ namespace expresssolution
             }
             catch (Exception ex)
             {
-                throw ex;
+                Session["Error"] = ex.ToString();
+                Response.Redirect("Error.aspx", false);
             }
         }
 

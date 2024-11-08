@@ -3,40 +3,24 @@
   "WorkspaceRootPath": "C:\\Users\\poky1975\\Documents\\GitHub\\tp-cuatrimestral-equipo-4c\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{414987C8-D492-4B29-99D1-26A7FCA3C15B}|Seguridad\\Seguridad.csproj|c:\\users\\poky1975\\documents\\github\\tp-cuatrimestral-equipo-4c\\seguridad\\seguridad.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{414987C8-D492-4B29-99D1-26A7FCA3C15B}|Seguridad\\Seguridad.csproj|solutionrelative:seguridad\\seguridad.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{C0AAD9C7-E646-4929-B57C-3DF46B994BB5}|expresssolution\\expresssolution.csproj|C:\\Users\\poky1975\\Documents\\GitHub\\tp-cuatrimestral-equipo-4c\\expresssolution\\perfil.aspx.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{C0AAD9C7-E646-4929-B57C-3DF46B994BB5}|expresssolution\\expresssolution.csproj|solutionrelative:expresssolution\\perfil.aspx.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{C0AAD9C7-E646-4929-B57C-3DF46B994BB5}|expresssolution\\expresssolution.csproj|C:\\Users\\poky1975\\Documents\\GitHub\\tp-cuatrimestral-equipo-4c\\expresssolution\\master.master.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{C0AAD9C7-E646-4929-B57C-3DF46B994BB5}|expresssolution\\expresssolution.csproj|solutionrelative:expresssolution\\master.master.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{C0AAD9C7-E646-4929-B57C-3DF46B994BB5}|expresssolution\\expresssolution.csproj|C:\\Users\\poky1975\\Documents\\GitHub\\tp-cuatrimestral-equipo-4c\\expresssolution\\perfil.aspx||{57312C73-6202-49E9-B1E1-40EA1A6DC1F6}",
+      "RelativeMoniker": "D:0:0:{C0AAD9C7-E646-4929-B57C-3DF46B994BB5}|expresssolution\\expresssolution.csproj|solutionrelative:expresssolution\\perfil.aspx||{57312C73-6202-49E9-B1E1-40EA1A6DC1F6}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{C0AAD9C7-E646-4929-B57C-3DF46B994BB5}|expresssolution\\expresssolution.csproj|c:\\users\\poky1975\\documents\\github\\tp-cuatrimestral-equipo-4c\\expresssolution\\registro.aspx.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{C0AAD9C7-E646-4929-B57C-3DF46B994BB5}|expresssolution\\expresssolution.csproj|solutionrelative:expresssolution\\registro.aspx.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{B6A811BE-BAE7-4696-856A-10DD4D5D003C}|Negocio\\Negocio.csproj|c:\\users\\poky1975\\documents\\github\\tp-cuatrimestral-equipo-4c\\negocio\\usuarionegocio.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{B6A811BE-BAE7-4696-856A-10DD4D5D003C}|Negocio\\Negocio.csproj|solutionrelative:negocio\\usuarionegocio.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{C0AAD9C7-E646-4929-B57C-3DF46B994BB5}|expresssolution\\expresssolution.csproj|c:\\users\\poky1975\\documents\\github\\tp-cuatrimestral-equipo-4c\\expresssolution\\listadousuarios.aspx||{57312C73-6202-49E9-B1E1-40EA1A6DC1F6}",
-      "RelativeMoniker": "D:0:0:{C0AAD9C7-E646-4929-B57C-3DF46B994BB5}|expresssolution\\expresssolution.csproj|solutionrelative:expresssolution\\listadousuarios.aspx||{57312C73-6202-49E9-B1E1-40EA1A6DC1F6}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{D5BEFBAB-4366-4BC9-9676-26A34D1F8CC9}|Dominio\\Dominio.csproj|c:\\users\\poky1975\\documents\\github\\tp-cuatrimestral-equipo-4c\\dominio\\usuario.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{D5BEFBAB-4366-4BC9-9676-26A34D1F8CC9}|Dominio\\Dominio.csproj|solutionrelative:dominio\\usuario.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{C0AAD9C7-E646-4929-B57C-3DF46B994BB5}|expresssolution\\expresssolution.csproj|c:\\users\\poky1975\\documents\\github\\tp-cuatrimestral-equipo-4c\\expresssolution\\listadoincidencias.aspx.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{C0AAD9C7-E646-4929-B57C-3DF46B994BB5}|expresssolution\\expresssolution.csproj|solutionrelative:expresssolution\\listadoincidencias.aspx.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{C0AAD9C7-E646-4929-B57C-3DF46B994BB5}|expresssolution\\expresssolution.csproj|c:\\users\\poky1975\\documents\\github\\tp-cuatrimestral-equipo-4c\\expresssolution\\listadousuarios.aspx.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{C0AAD9C7-E646-4929-B57C-3DF46B994BB5}|expresssolution\\expresssolution.csproj|solutionrelative:expresssolution\\listadousuarios.aspx.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{C0AAD9C7-E646-4929-B57C-3DF46B994BB5}|expresssolution\\expresssolution.csproj|c:\\users\\poky1975\\documents\\github\\tp-cuatrimestral-equipo-4c\\expresssolution\\login.aspx.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{C0AAD9C7-E646-4929-B57C-3DF46B994BB5}|expresssolution\\expresssolution.csproj|solutionrelative:expresssolution\\login.aspx.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{C0AAD9C7-E646-4929-B57C-3DF46B994BB5}|expresssolution\\expresssolution.csproj|c:\\users\\poky1975\\documents\\github\\tp-cuatrimestral-equipo-4c\\expresssolution\\default.aspx.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{C0AAD9C7-E646-4929-B57C-3DF46B994BB5}|expresssolution\\expresssolution.csproj|solutionrelative:expresssolution\\default.aspx.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{C0AAD9C7-E646-4929-B57C-3DF46B994BB5}|expresssolution\\expresssolution.csproj|c:\\users\\poky1975\\documents\\github\\tp-cuatrimestral-equipo-4c\\expresssolution\\registro.aspx.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{C0AAD9C7-E646-4929-B57C-3DF46B994BB5}|expresssolution\\expresssolution.csproj|solutionrelative:expresssolution\\registro.aspx.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
   "DocumentGroupContainers": [
@@ -46,123 +30,71 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 5,
+          "SelectedChildIndex": 4,
           "Children": [
             {
               "$type": "Document",
-              "DocumentIndex": 5,
-              "Title": "Usuario.cs",
-              "DocumentMoniker": "C:\\Users\\poky1975\\Documents\\GitHub\\tp-cuatrimestral-equipo-4c\\Dominio\\Usuario.cs",
-              "RelativeDocumentMoniker": "Dominio\\Usuario.cs",
-              "ToolTip": "C:\\Users\\poky1975\\Documents\\GitHub\\tp-cuatrimestral-equipo-4c\\Dominio\\Usuario.cs",
-              "RelativeToolTip": "Dominio\\Usuario.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAsAAAAaAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-11-07T20:01:11.324Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
               "DocumentIndex": 4,
-              "Title": "ListadoUsuarios.aspx",
-              "DocumentMoniker": "C:\\Users\\poky1975\\Documents\\GitHub\\tp-cuatrimestral-equipo-4c\\expresssolution\\ListadoUsuarios.aspx",
-              "RelativeDocumentMoniker": "expresssolution\\ListadoUsuarios.aspx",
-              "ToolTip": "C:\\Users\\poky1975\\Documents\\GitHub\\tp-cuatrimestral-equipo-4c\\expresssolution\\ListadoUsuarios.aspx",
-              "RelativeToolTip": "expresssolution\\ListadoUsuarios.aspx",
-              "LogicalView": "7651a703-06e5-11d1-8ebd-00a0c90f26ea",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000195|",
-              "WhenOpened": "2024-11-07T19:59:53.163Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 3,
-              "Title": "UsuarioNegocio.cs",
-              "DocumentMoniker": "C:\\Users\\poky1975\\Documents\\GitHub\\tp-cuatrimestral-equipo-4c\\Negocio\\UsuarioNegocio.cs",
-              "RelativeDocumentMoniker": "Negocio\\UsuarioNegocio.cs",
-              "ToolTip": "C:\\Users\\poky1975\\Documents\\GitHub\\tp-cuatrimestral-equipo-4c\\Negocio\\UsuarioNegocio.cs",
-              "RelativeToolTip": "Negocio\\UsuarioNegocio.cs",
-              "ViewState": "AgIAAAwAAACgmZmZmZkxwA4AAAA2AAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-11-07T20:01:17.47Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 1,
-              "Title": "Master.Master.cs",
-              "DocumentMoniker": "C:\\Users\\poky1975\\Documents\\GitHub\\tp-cuatrimestral-equipo-4c\\expresssolution\\Master.Master.cs",
-              "RelativeDocumentMoniker": "expresssolution\\Master.Master.cs",
-              "ToolTip": "C:\\Users\\poky1975\\Documents\\GitHub\\tp-cuatrimestral-equipo-4c\\expresssolution\\Master.Master.cs",
-              "RelativeToolTip": "expresssolution\\Master.Master.cs",
-              "ViewState": "AgIAAAMAAAAAAAAAAAAYwA8AAABWAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-11-05T22:04:39.764Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 2,
               "Title": "Registro.aspx.cs",
               "DocumentMoniker": "C:\\Users\\poky1975\\Documents\\GitHub\\tp-cuatrimestral-equipo-4c\\expresssolution\\Registro.aspx.cs",
               "RelativeDocumentMoniker": "expresssolution\\Registro.aspx.cs",
               "ToolTip": "C:\\Users\\poky1975\\Documents\\GitHub\\tp-cuatrimestral-equipo-4c\\expresssolution\\Registro.aspx.cs",
               "RelativeToolTip": "expresssolution\\Registro.aspx.cs",
-              "ViewState": "AgIAABEAAAAAAAAAAIA8wBgAAAA0AAAAAAAAAA==",
+              "ViewState": "AgIAABYAAABgzMzMzMwuwCkAAABGAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-11-07T19:50:49.98Z",
+              "WhenOpened": "2024-11-08T14:21:22.939Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 0,
-              "Title": "Seguridad.cs",
-              "DocumentMoniker": "C:\\Users\\poky1975\\Documents\\GitHub\\tp-cuatrimestral-equipo-4c\\Seguridad\\Seguridad.cs",
-              "RelativeDocumentMoniker": "Seguridad\\Seguridad.cs",
-              "ToolTip": "C:\\Users\\poky1975\\Documents\\GitHub\\tp-cuatrimestral-equipo-4c\\Seguridad\\Seguridad.cs",
-              "RelativeToolTip": "Seguridad\\Seguridad.cs",
-              "ViewState": "AgIAAAYAAADA//////8lwD8AAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-11-07T20:07:13.534Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 6,
+              "DocumentIndex": 3,
               "Title": "ListadoUsuarios.aspx.cs",
               "DocumentMoniker": "C:\\Users\\poky1975\\Documents\\GitHub\\tp-cuatrimestral-equipo-4c\\expresssolution\\ListadoUsuarios.aspx.cs",
               "RelativeDocumentMoniker": "expresssolution\\ListadoUsuarios.aspx.cs",
               "ToolTip": "C:\\Users\\poky1975\\Documents\\GitHub\\tp-cuatrimestral-equipo-4c\\expresssolution\\ListadoUsuarios.aspx.cs",
               "RelativeToolTip": "expresssolution\\ListadoUsuarios.aspx.cs",
-              "ViewState": "AgIAAAgAAABgZmZmZmYkwBEAAAA8AAAAAAAAAA==",
+              "ViewState": "AgIAAAwAAABwmZmZmZkxwB8AAAA9AAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-11-07T19:55:07.256Z",
+              "WhenOpened": "2024-11-08T14:19:25.34Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 7,
-              "Title": "Login.aspx.cs",
-              "DocumentMoniker": "C:\\Users\\poky1975\\Documents\\GitHub\\tp-cuatrimestral-equipo-4c\\expresssolution\\Login.aspx.cs",
-              "RelativeDocumentMoniker": "expresssolution\\Login.aspx.cs",
-              "ToolTip": "C:\\Users\\poky1975\\Documents\\GitHub\\tp-cuatrimestral-equipo-4c\\expresssolution\\Login.aspx.cs",
-              "RelativeToolTip": "expresssolution\\Login.aspx.cs",
-              "ViewState": "AgIAABUAAAAAzMzMzMz8vxwAAAAhAAAAAAAAAA==",
+              "DocumentIndex": 2,
+              "Title": "ListadoIncidencias.aspx.cs",
+              "DocumentMoniker": "C:\\Users\\poky1975\\Documents\\GitHub\\tp-cuatrimestral-equipo-4c\\expresssolution\\ListadoIncidencias.aspx.cs",
+              "RelativeDocumentMoniker": "expresssolution\\ListadoIncidencias.aspx.cs",
+              "ToolTip": "C:\\Users\\poky1975\\Documents\\GitHub\\tp-cuatrimestral-equipo-4c\\expresssolution\\ListadoIncidencias.aspx.cs",
+              "RelativeToolTip": "expresssolution\\ListadoIncidencias.aspx.cs",
+              "ViewState": "AgIAAA4AAACAmZmZmZklwCgAAAA3AAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-11-07T20:10:18.664Z",
+              "WhenOpened": "2024-11-08T14:18:49.005Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 8,
-              "Title": "Default.aspx.cs",
-              "DocumentMoniker": "C:\\Users\\poky1975\\Documents\\GitHub\\tp-cuatrimestral-equipo-4c\\expresssolution\\Default.aspx.cs",
-              "RelativeDocumentMoniker": "expresssolution\\Default.aspx.cs",
-              "ToolTip": "C:\\Users\\poky1975\\Documents\\GitHub\\tp-cuatrimestral-equipo-4c\\expresssolution\\Default.aspx.cs",
-              "RelativeToolTip": "expresssolution\\Default.aspx.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "DocumentIndex": 1,
+              "Title": "Perfil.aspx",
+              "DocumentMoniker": "C:\\Users\\poky1975\\Documents\\GitHub\\tp-cuatrimestral-equipo-4c\\expresssolution\\Perfil.aspx",
+              "RelativeDocumentMoniker": "expresssolution\\Perfil.aspx",
+              "ToolTip": "C:\\Users\\poky1975\\Documents\\GitHub\\tp-cuatrimestral-equipo-4c\\expresssolution\\Perfil.aspx",
+              "RelativeToolTip": "expresssolution\\Perfil.aspx",
+              "LogicalView": "7651a703-06e5-11d1-8ebd-00a0c90f26ea",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000195|",
+              "WhenOpened": "2024-11-07T23:13:21.095Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "Perfil.aspx.cs",
+              "DocumentMoniker": "C:\\Users\\poky1975\\Documents\\GitHub\\tp-cuatrimestral-equipo-4c\\expresssolution\\Perfil.aspx.cs",
+              "RelativeDocumentMoniker": "expresssolution\\Perfil.aspx.cs",
+              "ToolTip": "C:\\Users\\poky1975\\Documents\\GitHub\\tp-cuatrimestral-equipo-4c\\expresssolution\\Perfil.aspx.cs",
+              "RelativeToolTip": "expresssolution\\Perfil.aspx.cs",
+              "ViewState": "AgIAAB8AAAAAzczMzMwmwEQAAAAdAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-11-07T19:51:41.947Z",
+              "WhenOpened": "2024-11-07T23:13:25.755Z",
               "EditorCaption": ""
             }
           ]

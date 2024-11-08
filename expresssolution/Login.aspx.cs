@@ -28,17 +28,17 @@ namespace expresssolution
 
                 if (negocio.Login(usuario))
                 {
-                    Session.Add("Usuario", usuario);
+                    Session["Usuario"] = usuario;
                     Response.Redirect("Principal.aspx", false);
                 } else
                 {
-                    Session.Add("Error", "Usuario o contraseña incorrectos");
+                    Session["Error"] = "Usuario o contraseña incorrectos";
                     Response.Redirect("Error.aspx", false);
                 }
             }
             catch (Exception ex)
             {
-                Session.Add("Error", ex.ToString());
+                Session["Error"] = ex.ToString();
                 Response.Redirect("Error.aspx", false);
             }
         }
@@ -50,7 +50,8 @@ namespace expresssolution
             }
             catch (Exception ex)
             {
-                throw ex;
+                Session["Error"] = ex.ToString();
+                Response.Redirect("Error.aspx", false);
             }
         }
     }
