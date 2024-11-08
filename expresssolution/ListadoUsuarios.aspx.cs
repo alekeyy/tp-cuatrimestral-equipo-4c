@@ -23,6 +23,17 @@ namespace expresssolution
                 Session["Error"] = ex.ToString();
                 Response.Redirect("Error.aspx", false);
             }
+
+            if (!IsPostBack)
+            {
+                if (Seguridad.seguridad.EsAdmin(Session["usuario"])) 
+                {
+                    dgvListaUsuarios.Columns[6].Visible = true;
+                } else
+                {
+                    dgvListaUsuarios.Columns[6].Visible = false;
+                }
+            }
         }
 
         protected void dgvListaUsuarios_SelectedIndexChanged(object sender, EventArgs e)

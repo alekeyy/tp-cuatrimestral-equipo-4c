@@ -135,6 +135,8 @@ USE EXPRESS_SOLUTIONS_DB_borrador
 GO
 
 -- SELECT TODO
+SELECT * FROM TIPO_USUARIO
+
 SELECT * FROM USUARIO;
 GO
 
@@ -240,3 +242,8 @@ EXEC BUSCAR_USUARIO @ID
 
 
 --///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+-- FIX BOLUDO, TIPOS USUARIOS
+
+UPDATE TIPO_USUARIO SET TipoUsuario = 'SUPERVISOR' WHERE ID = 3;
+UPDATE TIPO_USUARIO SET TipoUsuario = 'ADMINISTRADOR' WHERE ID = 4;

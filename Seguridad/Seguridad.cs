@@ -59,5 +59,18 @@ namespace Seguridad
             }
             return false;
         }
+
+        public static bool EsCliente(Object user)
+        {
+            Usuario usuario = user != null ? (Usuario)user : null;
+            if (usuario != null)
+            {
+                if (usuario.tipoUsuario.Descripcion == "CLIENTE")
+                {
+                    return true;
+                }
+            }
+            return false;
+        }
     }
 }

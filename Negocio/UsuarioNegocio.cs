@@ -21,7 +21,7 @@ namespace Negocio
 
             try
             {
-                datos.setearConsulta("SELECT U.ID, U.IDTipoUsuario, TU.TipoUsuario, U.Nombre, U.Apellido, U.Email FROM USUARIO U, TIPO_USUARIO TU WHERE U.IDTipoUsuario = TU.ID ORDER BY TU.TipoUsuario ASC");
+                datos.setearConsulta("SELECT U.ID, U.IDTipoUsuario, TU.TipoUsuario, U.Nombre, U.Apellido, U.Email FROM USUARIO U, TIPO_USUARIO TU WHERE U.IDTipoUsuario = TU.ID ORDER BY U.IDTipoUsuario DESC;");
                 datos.ejecutarLectura();
 
                 while (datos.Lector.Read())
