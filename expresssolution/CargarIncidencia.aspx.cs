@@ -22,10 +22,16 @@ namespace expresssolution
                 ddlPrioridadIncidencia.DataTextField = "Descripcion";
                 ddlPrioridadIncidencia.DataBind();
 
-            ddlTipoIncidencia.DataSource = tipo.listar();
-            ddlTipoIncidencia.DataValueField = "Id";
-            ddlTipoIncidencia.DataTextField = "Descripcion";
-            ddlTipoIncidencia.DataBind();
+                ddlTipoIncidencia.DataSource = tipo.listar();
+                ddlTipoIncidencia.DataValueField = "Id";
+                ddlTipoIncidencia.DataTextField = "Descripcion";
+                ddlTipoIncidencia.DataBind();
+            }
+            catch (Exception ex)
+            {
+                Session["Error"] = ex.ToString();
+                Response.Redirect("Error.aspx", false);
+            }
         }
 
         protected void btnAgregar_Click(object sender, EventArgs e)
