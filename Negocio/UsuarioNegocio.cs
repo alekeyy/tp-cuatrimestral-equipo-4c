@@ -13,7 +13,7 @@ namespace Negocio
 {
     public class UsuarioNegocio
     {
-        public List<Usuario> listar()
+        public List<Usuario> listar(int tipoUsuario = 0)
         {
             List<Usuario> lista = new List<Usuario>();
 
@@ -22,6 +22,11 @@ namespace Negocio
             try
             {
                 datos.setearConsulta("SELECT U.ID, U.IDTipoUsuario, TU.TipoUsuario, U.Nombre, U.Apellido, U.Email FROM USUARIO U, TIPO_USUARIO TU WHERE U.IDTipoUsuario = TU.ID ORDER BY U.IDTipoUsuario DESC;");
+                if(tipoUsuario > 0 && tipoUsuario < 5)
+                {
+                    datos.setearConsulta("SELECT U.ID, U.IDTipoUsuario, TU.TipoUsuario, U.Nombre, U.Apellido, U.Email FROM USUARIO U, TIPO_USUARIO TU WHERE U.IDTipoUsuario = TU.ID AND U.IDTipoUsuario = @TipoUsuario ORDER BY U.IDTipoUsuario DESC;");
+                    datos.setearParametro("@TipoUsuario", tipoUsuario);
+                }
                 datos.ejecutarLectura();
 
                 while (datos.Lector.Read())

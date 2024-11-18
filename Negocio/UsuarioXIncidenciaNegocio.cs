@@ -46,5 +46,21 @@ namespace Negocio
                 datos.cerrarConexion();
             }
         }
+
+        public int agregar(UsuarioXIncidencia aux, Incidencia incidencia)
+        {
+            AccesoDatos datos = new AccesoDatos();
+            try
+            {
+                datos.setearConsulta("EXEC GenerarReporte @IDCliente, @IDIncidencia");
+                datos.setearParametro("@IDCliente", aux.IDCliente);
+                datos.setearParametro("@IDIncidencia", incidencia.ID);
+                return datos.ejecutarAccionScalar();
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+        }
     }
 }

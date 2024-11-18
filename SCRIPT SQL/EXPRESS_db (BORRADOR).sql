@@ -260,3 +260,32 @@ ORDER BY U.IDTipoUsuario DESC;
 
 SELECT * FROM INCIDENCIAS
 SELECT * FROM USUARIOS_X_INCIDENCIA;
+
+-- SUBIR INCIDENCIA
+CREATE or ALTER PROCEDURE SubirIncidencia (
+	@Comentario nvarchar(50)
+)
+AS BEGIN
+	INSERT INTO INCIDENCIAS(Comentarios)
+	OUTPUT inserted.Id
+	VALUES(@Comentario) --Es 1 ya que al registrar, automaticamente te identifica como cliente
+END
+GO
+
+-- REGISTRAR USUARIO X INCIDENCIA (REPORTE)
+CREATE or ALTER PROCEDURE GenerarReporte (
+	@IDCliente bigint,
+	@IDIncidencia bigint
+)
+AS BEGIN
+	INSERT INTO USUARIOS_X_INCIDENCIA(IDCliente, IDIncidencia, Descripcion)
+	OUTPUT inserted.Id		
+	VALUES(@IDCliente, @IDIncidencia, ' ') --Es 1 ya que al registrar, automaticamente te identifica como cliente
+END
+GO
+
+-- EJEMPLO
+EXEC SubirIncidencia 'default123';
+GO
+EXEC GenerarReporte 20, 7;
+GO

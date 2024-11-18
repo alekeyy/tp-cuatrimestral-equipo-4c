@@ -5,6 +5,7 @@ using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
 using Negocio;
+using Dominio;
 
 namespace expresssolution
 {
@@ -16,6 +17,8 @@ namespace expresssolution
             {
                 TipoNegocio tipo = new TipoNegocio();
                 PrioridadNegocio prioridad = new PrioridadNegocio();
+                EstadoNegocio estado = new EstadoNegocio();
+
 
                 ddlPrioridadIncidencia.DataSource = prioridad.listar();
                 ddlPrioridadIncidencia.DataValueField = "Id";
@@ -26,6 +29,26 @@ namespace expresssolution
                 ddlTipoIncidencia.DataValueField = "Id";
                 ddlTipoIncidencia.DataTextField = "Descripcion";
                 ddlTipoIncidencia.DataBind();
+
+                ddlEstadoIncidencia.DataSource = estado.listar();
+                ddlEstadoIncidencia.DataValueField = "Id";
+                ddlEstadoIncidencia.DataTextField = "Descripcion";
+                ddlEstadoIncidencia.DataBind();
+
+                // -- Cargar Telefonista y Cliente, con los valores 1- Cliente, 2-Telefonista de tipos de usuario
+
+                UsuarioNegocio cliente = new UsuarioNegocio();
+                ddlCliente.DataSource = cliente.listar(1);
+                ddlCliente.DataValueField = "Id";
+                ddlCliente.DataTextField = "Nombre";
+                ddlCliente.DataBind();
+
+                UsuarioNegocio telefonista = new UsuarioNegocio();
+                ddlTelefonista.DataSource = telefonista.listar(2);
+                ddlTelefonista.DataValueField = "Id";
+                ddlTelefonista.DataTextField = "Nombre";
+                ddlTelefonista.DataBind();
+
             }
             catch (Exception ex)
             {
@@ -38,6 +61,17 @@ namespace expresssolution
         {
             try
             {
+                IncidenciaNegocio negocio = new IncidenciaNegocio();
+                Incidencia incidencia = new Incidencia();
+
+                incidencia.Comentarios = txtDescripcionIncidencia.Text;
+                incidencia.ID = negocio.agregar(incidencia);
+
+                UsuarioXIncidenciaNegocio negocioReporte = new UsuarioXIncidenciaNegocio();
+                UsuarioXIncidencia reporte = new UsuarioXIncidencia();
+                reporte.IDCliente = ((Usuario)Session["usuario"]).ID;
+                negocioReporte.agregar(reporte, incidencia);
+
                 Response.Redirect("Principal.aspx", false);
             }
             catch (Exception ex)
