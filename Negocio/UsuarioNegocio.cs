@@ -50,7 +50,7 @@ namespace Negocio
             }
         }
 
-        public List<Usuario> listarEspecifico(int tipoUsuario)
+        public List<Usuario> listarEspecifico(int tipoUsuario) // Agregue el 3, para listar todos los que no sean clientes
         {
             List<Usuario> lista = new List<Usuario>();
             AccesoDatos datos = new AccesoDatos();
@@ -59,10 +59,13 @@ namespace Negocio
                 switch (tipoUsuario)
                 {
                     case 1:
-                        datos.setearConsulta("SELECT U.ID, U.Nombre + ' ' + U.Apellido AS NombreCompleto FROM USUARIO U WHERE U.IDTipoUsuario = 1 ORDER BY U.Apellido ASC");
+                        datos.setearConsulta("SELECT U.ID, U.IDTipoUsuario, TU.TipoUsuario, U.Nombre + ' ' + U.Apellido AS NombreCompleto, U.Email FROM USUARIO U, TIPO_USUARIO TU WHERE U.IDTipoUsuario = TU.ID AND U.IDTipoUsuario = 1 ORDER BY U.IDTipoUsuario DESC;");
                         break;
                     case 2:
-                        datos.setearConsulta("SELECT U.ID, U.Nombre + ' ' + U.Apellido AS NombreCompleto FROM USUARIO U WHERE U.IDTipoUsuario = 2 ORDER BY U.Apellido ASC");
+                        datos.setearConsulta("SELECT U.ID, U.IDTipoUsuario, TU.TipoUsuario, U.Nombre + ' ' + U.Apellido AS NombreCompleto, U.Email FROM USUARIO U, TIPO_USUARIO TU WHERE U.IDTipoUsuario = TU.ID AND U.IDTipoUsuario = 2 ORDER BY U.IDTipoUsuario DESC;");
+                        break;
+                    case 3:
+                        datos.setearConsulta("SELECT U.ID, U.IDTipoUsuario, TU.TipoUsuario, U.Nombre + ' ' + U.Apellido AS NombreCompleto, U.Email FROM USUARIO U, TIPO_USUARIO TU WHERE U.IDTipoUsuario = TU.ID AND U.IDTipoUsuario > 1 ORDER BY U.IDTipoUsuario DESC;");
                         break;
                 }
 
@@ -72,7 +75,11 @@ namespace Negocio
                 {
                     Usuario aux = new Usuario();
                     aux.ID = (int)datos.Lector["Id"];
+                    aux.tipoUsuario = new TipoUsuario();
+                    aux.tipoUsuario.Id = (int)datos.Lector["IDTipoUsuario"];
+                    aux.tipoUsuario.Descripcion = (string)datos.Lector["TipoUsuario"];
                     aux.Nombre = (string)datos.Lector["NombreCompleto"];
+                    aux.Email = (string)datos.Lector["Email"];
                     lista.Add(aux);
                 }
                 return lista;

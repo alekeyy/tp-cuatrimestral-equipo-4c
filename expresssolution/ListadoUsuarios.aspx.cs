@@ -15,7 +15,12 @@ namespace expresssolution
             try
             {
                 UsuarioNegocio negocio = new UsuarioNegocio();
-                dgvListaUsuarios.DataSource = negocio.listar();
+                // Cargar Clientes
+                dgvListaClientes.DataSource = negocio.listarEspecifico(1);
+                dgvListaClientes.DataBind();
+
+                // Cargar Usuarios
+                dgvListaUsuarios.DataSource = negocio.listarEspecifico(3);
                 dgvListaUsuarios.DataBind();
             }
             catch (Exception ex)
@@ -28,11 +33,26 @@ namespace expresssolution
             {
                 if (Seguridad.seguridad.EsAdmin(Session["usuario"])) 
                 {
-                    dgvListaUsuarios.Columns[5].Visible = true;
+                    dgvListaUsuarios.Columns[4].Visible = true;
                 } else
                 {
-                    dgvListaUsuarios.Columns[5].Visible = false;
+                    dgvListaUsuarios.Columns[4].Visible = false;
                 }
+            }
+        }
+
+        protected void dgvListaClientes_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            try
+            {
+                Session["PaginaAnterior"] = Title.ToString();
+                Session["IdAModificar"] = (int)dgvListaClientes.SelectedDataKey.Value;
+                Response.Redirect("Perfil.aspx", false);
+            }
+            catch (Exception ex)
+            {
+                Session["Error"] = ex.ToString();
+                Response.Redirect("Error.aspx", false);
             }
         }
 
