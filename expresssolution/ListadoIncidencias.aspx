@@ -6,6 +6,10 @@
         <div class="col">
         <h3>Bienvenido a la seccion de vista de incidentes</h3>
         <br />
+        <p><b> - en esta seccion en particular, supervisor solo puede darle a modificar, para asignar telefonista, nada mas</b></p>
+        <p><b> - administrador puede darle a modificar y modificar todos los datos</b></p>
+        <p><b> - telefonista ya filtra por sus incidencias asignadas </b></p>
+        <p><b> - cliente ya filtra por sus incidencias cargadas</b></p>
 
         <asp:GridView ID="dgvListaIncidenciasAsignadas" runat="server" CssClass="table table-active table-bordered"
             AutoGenerateColumns="false"
@@ -14,7 +18,8 @@
                 <asp:BoundField HeaderText="Id" DataField="Id"/>
                 <asp:BoundField HeaderText="Nombre" DataField="Nombre"/>
                 <asp:BoundField HeaderText="Telefonista Asignado" DataField="Telefonista"/>
-                <asp:CommandField HeaderText="Accion" ShowSelectButton="true" SelectText=" Modificar " />
+                <asp:BoundField HeaderText="Descripcion" DataField="Descripcion"/>
+                <asp:CommandField HeaderText="Accion" ShowSelectButton="true" SelectText=" Modificar "/>
             </Columns>
         </asp:GridView>
 

@@ -24,3 +24,16 @@ C:\Users\poky1975\Documents\GitHub\tp-cuatrimestral-equipo-4c\Seguridad\obj\Debu
 C:\Users\poky1975\Documents\GitHub\tp-cuatrimestral-equipo-4c\Seguridad\obj\Debug\Seguridad.csproj.Up2Date
 C:\Users\poky1975\Documents\GitHub\tp-cuatrimestral-equipo-4c\Seguridad\obj\Debug\Seguridad.dll
 C:\Users\poky1975\Documents\GitHub\tp-cuatrimestral-equipo-4c\Seguridad\obj\Debug\Seguridad.pdb
+C:\Users\poky1975\Desktop\tp-cuatrimestral-equipo-4c\Seguridad\bin\Debug\Seguridad.dll
+C:\Users\poky1975\Desktop\tp-cuatrimestral-equipo-4c\Seguridad\bin\Debug\Seguridad.pdb
+C:\Users\poky1975\Desktop\tp-cuatrimestral-equipo-4c\Seguridad\bin\Debug\accesoDatos.dll
+C:\Users\poky1975\Desktop\tp-cuatrimestral-equipo-4c\Seguridad\bin\Debug\Dominio.dll
+C:\Users\poky1975\Desktop\tp-cuatrimestral-equipo-4c\Seguridad\bin\Debug\Negocio.dll
+C:\Users\poky1975\Desktop\tp-cuatrimestral-equipo-4c\Seguridad\bin\Debug\accesoDatos.pdb
+C:\Users\poky1975\Desktop\tp-cuatrimestral-equipo-4c\Seguridad\bin\Debug\Dominio.pdb
+C:\Users\poky1975\Desktop\tp-cuatrimestral-equipo-4c\Seguridad\bin\Debug\Negocio.pdb
+C:\Users\poky1975\Desktop\tp-cuatrimestral-equipo-4c\Seguridad\obj\Debug\Seguridad.csproj.AssemblyReference.cache
+C:\Users\poky1975\Desktop\tp-cuatrimestral-equipo-4c\Seguridad\obj\Debug\Seguridad.csproj.CoreCompileInputs.cache
+C:\Users\poky1975\Desktop\tp-cuatrimestral-equipo-4c\Seguridad\obj\Debug\Seguridad.csproj.Up2Date
+C:\Users\poky1975\Desktop\tp-cuatrimestral-equipo-4c\Seguridad\obj\Debug\Seguridad.dll
+C:\Users\poky1975\Desktop\tp-cuatrimestral-equipo-4c\Seguridad\obj\Debug\Seguridad.pdb

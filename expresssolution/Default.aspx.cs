@@ -5,6 +5,7 @@ using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
 using Dominio;
+using Seguridad;
 
 namespace expresssolution
 {
@@ -20,10 +21,6 @@ namespace expresssolution
             if ((Usuario)Session["Usuario"] == null)
             {
                 Response.Redirect("Login.aspx", false);
-            } else
-            {
-                Session.Add("error", "Ya te encuentras logueado.");
-                Response.Redirect("Error.aspx", false);
             }
         }
     }

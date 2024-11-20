@@ -42,3 +42,14 @@ C:\Users\poky1975\Documents\GitHub\tp-cuatrimestral-equipo-4c\Negocio\obj\Debug\
 C:\Users\poky1975\Documents\GitHub\tp-cuatrimestral-equipo-4c\Negocio\obj\Debug\Negocio.csproj.Up2Date
 C:\Users\poky1975\Documents\GitHub\tp-cuatrimestral-equipo-4c\Negocio\obj\Debug\Negocio.dll
 C:\Users\poky1975\Documents\GitHub\tp-cuatrimestral-equipo-4c\Negocio\obj\Debug\Negocio.pdb
+C:\Users\poky1975\Desktop\tp-cuatrimestral-equipo-4c\Negocio\bin\Debug\Negocio.dll
+C:\Users\poky1975\Desktop\tp-cuatrimestral-equipo-4c\Negocio\bin\Debug\Negocio.pdb
+C:\Users\poky1975\Desktop\tp-cuatrimestral-equipo-4c\Negocio\bin\Debug\accesoDatos.dll
+C:\Users\poky1975\Desktop\tp-cuatrimestral-equipo-4c\Negocio\bin\Debug\Dominio.dll
+C:\Users\poky1975\Desktop\tp-cuatrimestral-equipo-4c\Negocio\bin\Debug\accesoDatos.pdb
+C:\Users\poky1975\Desktop\tp-cuatrimestral-equipo-4c\Negocio\bin\Debug\Dominio.pdb
+C:\Users\poky1975\Desktop\tp-cuatrimestral-equipo-4c\Negocio\obj\Debug\Negocio.csproj.AssemblyReference.cache
+C:\Users\poky1975\Desktop\tp-cuatrimestral-equipo-4c\Negocio\obj\Debug\Negocio.csproj.CoreCompileInputs.cache
+C:\Users\poky1975\Desktop\tp-cuatrimestral-equipo-4c\Negocio\obj\Debug\Negocio.csproj.Up2Date
+C:\Users\poky1975\Desktop\tp-cuatrimestral-equipo-4c\Negocio\obj\Debug\Negocio.dll
+C:\Users\poky1975\Desktop\tp-cuatrimestral-equipo-4c\Negocio\obj\Debug\Negocio.pdb

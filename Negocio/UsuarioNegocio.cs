@@ -11,9 +11,9 @@ using System.Threading.Tasks;
 
 namespace Negocio
 {
-    public class UsuarioNegocio
+    public class UsuarioNegocio 
     {
-        public List<Usuario> listar(int tipoUsuario = 0)
+        public List<Usuario> listar()
         {
             List<Usuario> lista = new List<Usuario>();
 
@@ -22,11 +22,6 @@ namespace Negocio
             try
             {
                 datos.setearConsulta("SELECT U.ID, U.IDTipoUsuario, TU.TipoUsuario, U.Nombre, U.Apellido, U.Email FROM USUARIO U, TIPO_USUARIO TU WHERE U.IDTipoUsuario = TU.ID ORDER BY U.IDTipoUsuario DESC;");
-                if(tipoUsuario > 0 && tipoUsuario < 5)
-                {
-                    datos.setearConsulta("SELECT U.ID, U.IDTipoUsuario, TU.TipoUsuario, U.Nombre, U.Apellido, U.Email FROM USUARIO U, TIPO_USUARIO TU WHERE U.IDTipoUsuario = TU.ID AND U.IDTipoUsuario = @TipoUsuario ORDER BY U.IDTipoUsuario DESC;");
-                    datos.setearParametro("@TipoUsuario", tipoUsuario);
-                }
                 datos.ejecutarLectura();
 
                 while (datos.Lector.Read())
@@ -39,6 +34,45 @@ namespace Negocio
                     aux.Nombre = (string)datos.Lector["Nombre"];
                     aux.Apellido = (string)datos.Lector["Apellido"];
                     aux.Email = (string)datos.Lector["Email"];
+                    lista.Add(aux);
+                }
+                return lista;
+
+            }
+            catch (Exception ex)
+            {
+
+                throw ex;
+            }
+            finally
+            {
+                datos.cerrarConexion();
+            }
+        }
+
+        public List<Usuario> listarEspecifico(int tipoUsuario)
+        {
+            List<Usuario> lista = new List<Usuario>();
+            AccesoDatos datos = new AccesoDatos();
+            try
+            {
+                switch (tipoUsuario)
+                {
+                    case 1:
+                        datos.setearConsulta("SELECT U.ID, U.Nombre + ' ' + U.Apellido AS NombreCompleto FROM USUARIO U WHERE U.IDTipoUsuario = 1 ORDER BY U.Apellido ASC");
+                        break;
+                    case 2:
+                        datos.setearConsulta("SELECT U.ID, U.Nombre + ' ' + U.Apellido AS NombreCompleto FROM USUARIO U WHERE U.IDTipoUsuario = 2 ORDER BY U.Apellido ASC");
+                        break;
+                }
+
+                datos.ejecutarLectura();
+
+                while (datos.Lector.Read())
+                {
+                    Usuario aux = new Usuario();
+                    aux.ID = (int)datos.Lector["Id"];
+                    aux.Nombre = (string)datos.Lector["NombreCompleto"];
                     lista.Add(aux);
                 }
                 return lista;
@@ -101,7 +135,7 @@ namespace Negocio
                 throw ex;
             }
         }
-    
+        
         public Usuario BuscarUsuario(int id)
         {
             AccesoDatos datos = new AccesoDatos();
@@ -135,7 +169,7 @@ namespace Negocio
                 datos.cerrarConexion();
             }
         }
-    
+        
         public int VerificarIncidenciasTelefonista(int id)
         {
             AccesoDatos datos = new AccesoDatos();
@@ -183,5 +217,5 @@ namespace Negocio
             }
 
         }
-    }
+    } 
 }
