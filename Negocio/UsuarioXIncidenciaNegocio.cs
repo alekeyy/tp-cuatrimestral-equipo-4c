@@ -19,8 +19,6 @@ namespace Negocio
             {
                 datos.setearConsulta("INSERT INTO USUARIOS_X_INCIDENCIA(IDIncidencia, IDCliente, Descripcion) VALUES (@IDIncidencia, @IDCliente, @Descripcion)");
 
-                // idincidencia es not null, si o si tiene que recibir un parametro
-                // pero despues en el trigger se ingresa el correcto.
                 datos.setearParametro("@IDIncidencia", (object)nueva.IDIncidencia ?? DBNull.Value);
                 datos.setearParametro("@IDCliente", (object)nueva.IDCliente ?? DBNull.Value);
                 datos.setearParametro("@Descripcion", !string.IsNullOrEmpty(nueva.Descripcion) ? nueva.Descripcion : (object)DBNull.Value);
@@ -41,12 +39,13 @@ namespace Negocio
             AccesoDatos datos = new AccesoDatos();
             try
             {
-                datos.setearConsulta("EXEC PR_MODIFICAR_INCIDENCIA @NOMBRE, @IDTELEFONISTA, @DESCRIPCION, @IDTIPOINCIDENCIA, @IDPRIORIDADINCIDENCIA, @IDESTADO, @COMENTARIOS");
+                datos.setearConsulta("EXEC PR_MODIFICAR_INCIDENCIA @NOMBRE, @IDTELEFONISTA, @DESCRIPCION, @IDINCIDENCIA, @IDTIPOINCIDENCIA, @IDPRIORIDADINCIDENCIA, @IDESTADO, @COMENTARIOS");
 
                 datos.setearParametro("@NOMBRE", !string.IsNullOrEmpty(nueva.Nombre) ? nueva.Nombre : (object)DBNull.Value);
                 datos.setearParametro("@IDTELEFONISTA", (object)nueva.IDTelefonista ?? DBNull.Value);
                 datos.setearParametro("@DESCRIPCION", !string.IsNullOrEmpty(nueva.Descripcion) ? nueva.Descripcion : (object)DBNull.Value);
 
+                datos.setearParametro("@IDINCIDENCIA", (int)nueva.IDIncidencia == -1 ? (object)DBNull.Value : (int)nueva.IDIncidencia);
                 datos.setearParametro("@IDTIPOINCIDENCIA", (object)actualizacion.IDTipoIncidencia ?? DBNull.Value);
                 datos.setearParametro("@IDPRIORIDADINCIDENCIA", (object)actualizacion.IDTipoIncidencia ?? DBNull.Value);
                 datos.setearParametro("@IDESTADO", (object)actualizacion.IDEstado ?? DBNull.Value);
@@ -55,8 +54,8 @@ namespace Negocio
 
 
             }
-            catch (Exception ex) 
-            {             
+            catch (Exception ex)
+            {
                 throw ex;
             }
             finally
@@ -94,12 +93,12 @@ namespace Negocio
                 {
                     UsuarioXIncidencia aux = new UsuarioXIncidencia();
                     aux.ID = (object)datos.Lector["Id"] == DBNull.Value ? 0 : (int)datos.Lector["Id"];
-                    aux.Nombre = (object)datos.Lector["Nombre"] == DBNull.Value ? "------" : (string)datos.Lector["Nombre"];
+                    aux.Nombre = (object)datos.Lector["Nombre"] == DBNull.Value ? "------------" : (string)datos.Lector["Nombre"];
                     aux.IDIncidencia = (object)datos.Lector["IDIncidencia"] == DBNull.Value ? 0 : (int)datos.Lector["IDIncidencia"];
                     aux.IDCliente = (object)datos.Lector["IDCliente"] == DBNull.Value ? 0 : (int)datos.Lector["IDCliente"];
                     aux.IDTelefonista = (object)datos.Lector["IDTelefonista"] == DBNull.Value ? 0 : (int)datos.Lector["IDTelefonista"];
-                    aux.Telefonista = (object)datos.Lector["Telefonista"] == DBNull.Value ? "------" : (string)datos.Lector["Telefonista"];
-                    aux.Descripcion = (object)datos.Lector["Descripcion"] == DBNull.Value ? "------" : (string)datos.Lector["Descripcion"];
+                    aux.Telefonista = (object)datos.Lector["Telefonista"] == DBNull.Value ? "------------" : (string)datos.Lector["Telefonista"];
+                    aux.Descripcion = (object)datos.Lector["Descripcion"] == DBNull.Value ? "------------" : (string)datos.Lector["Descripcion"];
                     lista.Add(aux);
                 }
                 return lista;
@@ -114,5 +113,40 @@ namespace Negocio
             }
         }
 
+        public UsuarioXIncidencia buscarUsuarioXIncidencia(int id)
+        {
+            AccesoDatos datos = new AccesoDatos();
+            UsuarioXIncidencia usuarioXIncidencia = new UsuarioXIncidencia();
+            try
+            {
+
+                datos.setearConsulta("EXEC PR_BUSCAR_USUARIO_X_INCIDENCIA @ID");
+                datos.setearParametro("@ID", id);
+                datos.ejecutarLectura();
+
+                if (datos.Lector.Read())
+                {
+                    usuarioXIncidencia.Nombre = (object)datos.Lector["Nombre"] == (object)DBNull.Value ? "" : (string)datos.Lector["Nombre"];
+
+                    usuarioXIncidencia.IDIncidencia = (object)datos.Lector["IDIncidencia"] == (object)DBNull.Value ? 1 : (int)datos.Lector["IDIncidencia"];
+
+                    usuarioXIncidencia.IDCliente = (object)datos.Lector["IDCliente"] == (object)DBNull.Value ? 1 : (int)datos.Lector["IDCliente"];
+
+                    usuarioXIncidencia.IDTelefonista = (object)datos.Lector["IDTelefonista"] == (object)DBNull.Value ? 1 : (int)datos.Lector["IDTelefonista"];
+
+                    usuarioXIncidencia.Descripcion = (object)datos.Lector["Descripcion"] == (object)DBNull.Value ? "" : (string)datos.Lector["Descripcion"];
+                }
+
+                return usuarioXIncidencia;
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+            finally
+            {
+                datos.cerrarConexion();
+            }
+        }
     }
 }

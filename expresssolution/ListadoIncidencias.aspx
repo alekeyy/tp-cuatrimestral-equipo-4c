@@ -1,6 +1,5 @@
 ﻿<%@ Page Title="Incidencias" Language="C#" MasterPageFile="~/Master.Master" AutoEventWireup="true" CodeBehind="ListadoIncidencias.aspx.cs" Inherits="expresssolution.ListadoIncidencias" %>
-<asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
-</asp:Content>
+
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
     <div class="row">
         <div class="col">
@@ -12,9 +11,9 @@
         <p><b> - cliente ya filtra por sus incidencias cargadas</b></p>
 
         <asp:GridView ID="dgvListaIncidenciasAsignadas" runat="server" CssClass="table table-active table-bordered"
-            AutoGenerateColumns="false"
-            >
+            AutoGenerateColumns="false" OnSelectedIndexChanged="dgvListaIncidenciasAsignadas_SelectedIndexChanged" DataKeyNames="IDIncidencia">
             <Columns>
+                <asp:BoundField HeaderText="IDIncidencia" DataField="IDIncidencia" Visible="false"/>
                 <asp:BoundField HeaderText="Id" DataField="Id"/>
                 <asp:BoundField HeaderText="Nombre" DataField="Nombre"/>
                 <asp:BoundField HeaderText="Telefonista Asignado" DataField="Telefonista"/>
@@ -23,7 +22,7 @@
             </Columns>
         </asp:GridView>
 
-        <asp:Button Text="Agregar" runat="server" ID="btnAgregar" OnClick="btnAgregar_Click" CssClass="btn btn-primary" />
+        <asp:Button Text="Agregar" runat="server" ID="btnAgregar" OnClick="btnAgregar_Click" CssClass="btn btn-primary"/>
         </div>
     </div>
 

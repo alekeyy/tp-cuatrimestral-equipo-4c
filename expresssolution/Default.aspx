@@ -1,7 +1,5 @@
-﻿    <%@ Page Title="Express Solutions" Language="C#" MasterPageFile="~/Master.Master" AutoEventWireup="true" CodeBehind="Default.aspx.cs" Inherits="expresssolution.Default" %>
+﻿<%@ Page Title="Express Solutions" Language="C#" MasterPageFile="~/Master.Master" AutoEventWireup="true" CodeBehind="Default.aspx.cs" Inherits="expresssolution.Default" %>
 
-<asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
-</asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
     <main>
         <div class="row d-flex">
@@ -15,12 +13,13 @@
                 <p class="page--text">
                     Con años respaldando nuestro compromiso al cliente ofrecemos la mas completa y rapida respuesta a las incidencias de nuestros clientes 
                 <%if (!(Seguridad.seguridad.SessionActiva(Session["usuario"])))
-                  {%>
-                        <span class="pregunta">¿Aun no sos parte?</span></p>                                   
-                        <asp:Button runat="server" CssClass="btn btn-primary d-flex justify-content-center p-2" Text="UNETE" ID="btnUnete" OnClick="btnUnete_Click" />
-                <%} 
-                  else
-                  { %>
+                    {%>
+                    <span class="pregunta">¿Aun no sos parte?</span>
+                </p>
+                <asp:Button runat="server" CssClass="btn btn-primary d-flex justify-content-center p-2" Text="UNETE" ID="btnUnete" OnClick="btnUnete_Click" />
+                <%}
+                    else
+                    { %>
                         </p> 
                   <%}%>
             </div>

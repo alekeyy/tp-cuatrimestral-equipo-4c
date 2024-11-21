@@ -296,13 +296,16 @@ VALUES (1, 1, '')
 
 --///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
-
+-- se modifico ligeramente la logica del procedimiento almacenado
+-- para que se utilice el mismo tanto a la hora de cargar como a la hora de modificar una incidencia.
+-- el mismo actua en base a los parametros recibidos.
 CREATE OR ALTER PROCEDURE PR_MODIFICAR_INCIDENCIA
 (
 	@NOMBRE VARCHAR(50), 
 	@IDTELEFONISTA INT, 
 	@DESCRIPCION VARCHAR(300),
 
+	@IDINCIDENCIA INT,
 	@IDTIPOINCIDENCIA INT,
 	@IDPRIORIDADINCIDENCIA INT,
 	@IDESTADO INT,
@@ -321,17 +324,34 @@ BEGIN
 				RETURN;
 			END
 
-			UPDATE USUARIOS_X_INCIDENCIA SET 
-				Nombre = @NOMBRE,
-				IDTelefonista = @IDTELEFONISTA
-			WHERE Descripcion = @DESCRIPCION
+			IF(@IDINCIDENCIA IS NULL)
+			BEGIN 
+				UPDATE USUARIOS_X_INCIDENCIA SET 
+					Nombre = @NOMBRE,
+					IDTelefonista = @IDTELEFONISTA
+				WHERE Descripcion = @DESCRIPCION
 
-			UPDATE INCIDENCIAS SET
-				IDTipoIncidencia = @IDTIPOINCIDENCIA,
-				IDPrioridadIncidencia = @IDPRIORIDADINCIDENCIA,
-				IDEstado = @IDESTADO,
-				Comentarios = @COMENTARIOS
-			WHERE ID = (SELECT TOP (1) IDIncidencia FROM USUARIOS_X_INCIDENCIA ORDER BY ID DESC)
+				UPDATE INCIDENCIAS SET
+					IDTipoIncidencia = @IDTIPOINCIDENCIA,
+					IDPrioridadIncidencia = @IDPRIORIDADINCIDENCIA,
+					IDEstado = @IDESTADO,
+					Comentarios = @COMENTARIOS
+				WHERE ID = (SELECT TOP (1) IDIncidencia FROM USUARIOS_X_INCIDENCIA ORDER BY ID DESC)
+			END
+			ELSE
+			BEGIN 
+				UPDATE USUARIOS_X_INCIDENCIA SET 
+					Nombre = @NOMBRE,
+					IDTelefonista = @IDTELEFONISTA
+				WHERE IDIncidencia = @IDINCIDENCIA
+
+				UPDATE INCIDENCIAS SET
+					IDTipoIncidencia = @IDTIPOINCIDENCIA,
+					IDPrioridadIncidencia = @IDPRIORIDADINCIDENCIA,
+					IDEstado = @IDESTADO,
+					Comentarios = @COMENTARIOS
+				WHERE ID = @IDINCIDENCIA
+			END
 			
 		COMMIT TRANSACTION
 	END TRY
@@ -343,11 +363,52 @@ BEGIN
 END
 
 -- EJEMPLO PARA CODEBEHIND
-EXEC PR_MODIFICAR_INCIDENCIA @NOMBRE, @IDTELEFONISTA, @DESCRIPCION, @IDTIPOINCIDENCIA, @IDPRIORIDADINCIDENCIA, @IDESTADO, @COMENTARIOS 
-
-select * from USUARIOS_X_INCIDENCIA
-select * from INCIDENCIAS
+EXEC PR_MODIFICAR_INCIDENCIA @NOMBRE, @IDTELEFONISTA, @DESCRIPCION, @IDINCIDENCIA, @IDTIPOINCIDENCIA, @IDPRIORIDADINCIDENCIA, @IDESTADO, @COMENTARIOS 
 
 
 --///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
+
+CREATE OR ALTER PROCEDURE PR_BUSCAR_INCIDENCIA( 
+	@ID INT 
+)
+AS
+BEGIN 
+	BEGIN TRY
+			SELECT IDTipoIncidencia, IDPrioridadIncidencia, IDEstado, Comentarios FROM INCIDENCIAS 
+			WHERE ID = @ID
+	END TRY
+	BEGIN CATCH
+		RAISERROR('OCURRIO UN ERROR, INGRESE NUEVAMENTE EL ID BUSCADO.', 16, 10)
+	END CATCH
+END
+
+
+--///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+
+CREATE OR ALTER PROCEDURE PR_BUSCAR_USUARIO_X_INCIDENCIA( 
+	@ID INT 
+)
+AS
+BEGIN 
+	BEGIN TRY
+			SELECT Nombre, IDIncidencia, IDCliente, IDTelefonista, Descripcion FROM USUARIOS_X_INCIDENCIA 
+			WHERE IDIncidencia = @ID
+	END TRY
+	BEGIN CATCH
+		RAISERROR('OCURRIO UN ERROR, INGRESE NUEVAMENTE EL ID BUSCADO.', 16, 10)
+	END CATCH
+END
+
+
+-- EJEMPLOS DE LLAMADOS PARA EL CODEBEHIND
+EXEC PR_BUSCAR_USUARIO_X_INCIDENCIA @ID
+EXEC PR_BUSCAR_INCIDENCIA @ID
+
+
+--///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+
+SELECT * FROM INCIDENCIAS
+SELECT * FROM USUARIOS_X_INCIDENCIA

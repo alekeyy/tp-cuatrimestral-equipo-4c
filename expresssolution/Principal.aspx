@@ -1,6 +1,5 @@
 ﻿<%@ Page Title="Pantalla Principal" Language="C#" MasterPageFile="~/Master.Master" AutoEventWireup="true" CodeBehind="Principal.aspx.cs" Inherits="expresssolution.Principal" %>
-<asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
-</asp:Content>
+
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
         <%//EN ESTE APARTADO SE DEFINIRIA LAS ACCCIONES A REALIZAR POR EL TELEFONISTA %>
     <div class="row">

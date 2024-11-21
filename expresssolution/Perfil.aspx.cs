@@ -26,58 +26,47 @@ namespace expresssolution
                     ddlTipoUsuario.DataValueField = "Id";
                     ddlTipoUsuario.DataTextField = "Descripcion";
                     ddlTipoUsuario.DataBind();
+                }
 
-                    if (Session["Usuario"] != null)
+                if (Session["Usuario"] != null)
+                {
+                    Usuario actual = (Usuario)Session["Usuario"];
+
+                    if (seguridad.EsAdmin(actual))
                     {
-                        Usuario actual = (Usuario)Session["Usuario"];
-
-                        if (seguridad.EsAdmin(actual))
+                        if ((string)Session["PaginaAnterior"] == "Lista de usuarios")
                         {
-                            if ((string)Session["PaginaAnterior"] == "Lista de usuarios")
+                            UsuarioNegocio negocio = new UsuarioNegocio();
+                            Usuario modificar = new Usuario();
+
+                            // se asigna como pagina anterior la pagina actual.
+                            Session["PaginaAnterior"] = "Perfil";
+
+                            // se busca el usuario por id
+                            modificar = negocio.BuscarUsuario((int)Session["IdAModificar"]);
+
+                            // se precargan los datos
+                            ddlTipoUsuario.SelectedIndex = modificar.tipoUsuario.Id - 1;
+                            ddlTipoUsuario.DataBind();
+                            txtNombre.Text = modificar.Nombre;
+                            txtApellido.Text = modificar.Apellido;
+                            txtEmail.Text = modificar.Email;
+
+                            // toca verificar si el usuario modificado es un telefonista
+                            // si es se actua, sino se sigue con normalidad.
+                            if (ddlTipoUsuario.SelectedIndex == (2 - 1))
+                            // se pone 2 que es el nivel de telefonista, se le resta uno para transformarlo en indice.
                             {
-                                UsuarioNegocio negocio = new UsuarioNegocio();
-                                Usuario modificar = new Usuario();
-
-                                // se asigna como pagina anterior la pagina actual.
-                                Session["PaginaAnterior"] = "Perfil";
-
-                                // se busca el usuario por id
-                                modificar = negocio.BuscarUsuario((int)Session["IdAModificar"]);
-
-                                // se precargan los datos
-                                ddlTipoUsuario.SelectedIndex = modificar.tipoUsuario.Id - 1;
-                                ddlTipoUsuario.DataBind();
-                                txtNombre.Text = modificar.Nombre;
-                                txtApellido.Text = modificar.Apellido;
-                                txtEmail.Text = modificar.Email;
-
-                                // toca verificar si el usuario modificado es un telefonista
-                                // si es se actua, sino se sigue con normalidad.
-                                if (ddlTipoUsuario.SelectedIndex == (2 - 1))
-                                // se pone 2 que es el nivel de telefonista, se le resta uno para transformarlo en indice.
+                                if (negocio.VerificarIncidenciasTelefonista(modificar.ID) > 0)
                                 {
-                                    if (negocio.VerificarIncidenciasTelefonista(modificar.ID) > 0)
-                                    {
-                                        lblTelefonistaOcupado.Text = "No se puede cambiar el tipo de usuario a este telefonista, porque todavia cuenta con incidencias asignadas a el. Primero debera concluirlas.";
+                                    lblTelefonistaOcupado.Text = "No se puede cambiar el tipo de usuario a este telefonista, porque todavia cuenta con incidencias asignadas a el. Primero debera concluirlas.";
 
-                                        lblTelefonistaOcupado.ForeColor = System.Drawing.Color.Red;
-                                        ddlTipoUsuario.Enabled = false;
-                                    }
+                                    lblTelefonistaOcupado.ForeColor = System.Drawing.Color.Red;
+                                    ddlTipoUsuario.Enabled = false;
                                 }
-
-                                Session["UsuarioAModificar"] = modificar;
                             }
-                            else
-                            {
-                                ddlTipoUsuario.SelectedIndex = actual.tipoUsuario.Id - 1;
-                                ddlTipoUsuario.DataBind();
-                                txtNombre.Text = actual.Nombre;
-                                txtApellido.Text = actual.Apellido;
-                                txtEmail.Text = actual.Email;
 
-
-                                Session["UsuarioAModificar"] = actual;
-                            }
+                            Session["UsuarioAModificar"] = modificar;
                         }
                         else
                         {
@@ -91,6 +80,17 @@ namespace expresssolution
                             Session["UsuarioAModificar"] = actual;
                         }
                     }
+                    else
+                    {
+                        ddlTipoUsuario.SelectedIndex = actual.tipoUsuario.Id - 1;
+                        ddlTipoUsuario.DataBind();
+                        txtNombre.Text = actual.Nombre;
+                        txtApellido.Text = actual.Apellido;
+                        txtEmail.Text = actual.Email;
+
+
+                        Session["UsuarioAModificar"] = actual;
+                    }
                 }
             }
             catch (Exception ex)
@@ -98,9 +98,6 @@ namespace expresssolution
                 Session["Error"] = ex.ToString();
                 Response.Redirect("Error.aspx", false);
             }
-
-
-
         }
 
         protected void btnAceptar_Click(object sender, EventArgs e)

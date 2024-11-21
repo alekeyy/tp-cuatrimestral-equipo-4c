@@ -50,7 +50,7 @@ namespace Negocio
             }
         }
 
-        public List<Usuario> listarEspecifico(int tipoUsuario) // Agregue el 3, para listar todos los que no sean clientes
+        public List<Usuario> listarEspecifico(int tipoUsuario) // Agregue el 3, para listar todos los que no sean clientes :B
         {
             List<Usuario> lista = new List<Usuario>();
             AccesoDatos datos = new AccesoDatos();
