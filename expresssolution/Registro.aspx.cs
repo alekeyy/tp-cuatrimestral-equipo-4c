@@ -6,6 +6,7 @@ using System.Web.UI;
 using System.Web.UI.WebControls;
 using Dominio;
 using Negocio;
+using Seguridad;
 
 namespace expresssolution
 {
@@ -17,6 +18,50 @@ namespace expresssolution
             {
                 btnRegistrarse.Text = "Crear Usuario";
             }
+
+            if (IsPostBack)
+            {
+                if (seguridad.verificadorNullVacioEnBlanco(txtNombre.Text))
+                {
+
+                }
+                else
+                {
+
+                }
+
+                if (seguridad.verificadorNullVacioEnBlanco(txtApellido.Text))
+                {
+
+                }
+                else
+                {
+
+                }
+
+                if (seguridad.verificadorNullVacioEnBlanco(txtEmail.Text))
+                {
+
+                }
+                else if (seguridad.verificadorFormatoEmail(txtEmail.Text))
+                {
+
+                }
+                else
+                {
+
+                }
+
+                if (seguridad.verificadorNullVacioEnBlanco(txtPass.Text))
+                {
+
+                }
+                else
+                {
+
+                }
+            }
+
         }
         protected void btnRegistrarse_Click(object sender, EventArgs e)
         {

@@ -72,5 +72,42 @@ namespace Seguridad
             }
             return false;
         }
+
+        public static bool verificadorNullVacioEnBlanco(string palabra)
+        {
+            if (string.IsNullOrEmpty(palabra) || string.IsNullOrWhiteSpace(palabra))
+                return true;
+            return false;
+        }
+
+        public static bool verificadorFormatoEmail(string palabra)
+        {
+            if (palabra.Length < 7 || !palabra.Contains("@"))
+                return true;
+            return false;
+        }
+
+        public static string verificadorFortalezaContraseña(string palabra)
+        {
+            if (palabra.Length <= 5)
+            {
+                return "Debil";
+            }else
+            {
+                switch (palabra.Length)
+                {
+                    case 6:
+                        return "Basica";
+                    case 7:
+                        return "Decente";
+                    case 8:
+                        return "Media";
+                    case 9:
+                        return "Fuerte";
+                    default:
+                        return "Excelente";
+                }
+            }
+        }
     }
 }
