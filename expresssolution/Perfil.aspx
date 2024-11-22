@@ -11,7 +11,7 @@
                         <div class="col">
                             <div class="card p-5">
                                 <asp:Label Text="Tipo Usuario: " runat="server" CssClass="form-label" />
-                                <asp:DropDownList runat="server" ID="ddlTipoUsuario" CssClass="form-control btn btn-secondary dropdown-toggle" AutoPostBack="true" >
+                                <asp:DropDownList runat="server" ID="ddlTipoUsuario" CssClass="form-control btn bg-pagina dropdown-toggle" AutoPostBack="true" >
                                 </asp:DropDownList>
                                 <asp:Label Text="Nombre: " runat="server" CssClass="form-label" />
                                 <asp:TextBox runat="server" CssClass="form-control" ID="txtNombre" />
@@ -20,6 +20,10 @@
                                 <asp:Label Text="Email: " runat="server" CssClass="form-label" />
                                 <asp:TextBox runat="server" CssClass="form-control" ID="txtEmail" />
                                 
+                                <asp:Label Text="Contraseña: " runat="server" CssClass="form-label" />
+                                <asp:TextBox runat="server" CssClass="form-control" ID="txtContra" type="password" />
+                                <asp:Label Text="Contraseña Nueva: " runat="server" CssClass="form-label" />
+                                <asp:TextBox runat="server" CssClass="form-control" ID="txtContraNueva" type="password" />
                                 <div>
                                     <asp:Label Text="" runat="server" ID="lblTelefonistaOcupado"/>
                                     <br />

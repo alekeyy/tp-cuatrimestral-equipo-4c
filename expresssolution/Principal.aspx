@@ -5,7 +5,7 @@
     <div class="row">
         <div class="col">
             <div class="card card-custom d-flex align-items-center">
-              <asp:Image ImageUrl="~/images/agregar.png" runat="server" Width="300px" CssClass="card-img-top mt-2" AlternateText="Imagen Funcionalidad Lista Incidencias"/>
+              <asp:Image ImageUrl="~/images/agregar.png" runat="server" Width="300px" CssClass="card-img-top mt-2 p-2" AlternateText="Imagen Funcionalidad Lista Incidencias"/>
               <div class="card-body w-100 px-5">
                 <h5 class="card-title">Cargar Incidencias</h5>
                 <p class="card-text">Espacio para crear incidencias.</p>
@@ -15,7 +15,7 @@
         </div>
         <div class="col">
             <div class="card card-custom d-flex align-items-center">
-              <asp:Image ImageUrl="~/images/lista.png" runat="server" Width="300px" CssClass="card-img-top mt-2" AlternateText="Imagen Funcionalidad Lista Incidencias"/>
+              <asp:Image ImageUrl="~/images/lista.png" runat="server" Width="300px" CssClass="card-img-top mt-2 p-2" AlternateText="Imagen Funcionalidad Lista Incidencias"/>
               <div class="card-body w-100 px-5">
                 <h5 class="card-title">Lista de Incidencias</h5>
                 <p class="card-text">Consultar lista de incidencias asignadas/cargadas.</p>
@@ -27,7 +27,7 @@
          <%if (!(Seguridad.seguridad.EsCliente(Session["usuario"])) && (!(Seguridad.seguridad.EsSupervisor(Session["usuario"])))){ %>
         <div class="col">
             <div class="card card-custom d-flex align-items-center">
-              <asp:Image ImageUrl="~/images/agregarUsuario.png" runat="server" Width="300px" CssClass="card-img-top mt-2" AlternateText="Imagen Funcionalidad Lista Incidencias"/>
+              <asp:Image ImageUrl="~/images/agregarUsuario.png" runat="server" Width="300px" CssClass="card-img-top mt-2 p-2" AlternateText="Imagen Funcionalidad Lista Incidencias"/>
               <div class="card-body w-100 px-5">
                 <h5 class="card-title">Dar de Alta</h5>
                 <p class="card-text">Crearle un usuario a un cliente que no este registrado en el sistema.</p>
@@ -41,7 +41,7 @@
         <%if (!(Seguridad.seguridad.EsCliente(Session["usuario"]))){ %>
         <div class="col">
             <div class="card card-custom d-flex align-items-center">
-              <asp:Image ImageUrl="~/images/usuarios.png" runat="server" Width="300px" CssClass="card-img-top mt-2" AlternateText="Imagen Funcionalidad Lista Usuarios"/>
+              <asp:Image ImageUrl="~/images/usuarios.png" runat="server" Width="300px" CssClass="card-img-top mt-2 p-2" AlternateText="Imagen Funcionalidad Lista Usuarios"/>
               <div class="card-body w-100 px-5">
                 <h5 class="card-title">Lista Usuarios</h5>
                 <p class="card-text">Consultar lista de usuarios creados en el sitio.</p>

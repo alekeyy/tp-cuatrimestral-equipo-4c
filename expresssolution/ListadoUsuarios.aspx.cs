@@ -41,6 +41,18 @@ namespace expresssolution
             }
         }
 
+        protected void dgvListaClientes_PageIndexChanging(object sender, GridViewPageEventArgs e)
+        {
+            dgvListaClientes.PageIndex = e.NewPageIndex;
+            dgvListaClientes.DataBind();
+        }
+
+        protected void dgvListaUsuarios_PageIndexChanging(object sender, GridViewPageEventArgs e)
+        {
+            dgvListaUsuarios.PageIndex = e.NewPageIndex;
+            dgvListaUsuarios.DataBind();
+        }
+
         protected void dgvListaClientes_SelectedIndexChanged(object sender, EventArgs e)
         {
             try
@@ -70,5 +82,6 @@ namespace expresssolution
                 Response.Redirect("Error.aspx", false);
             }
         }
+
     }
 }

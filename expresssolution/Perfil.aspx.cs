@@ -152,13 +152,29 @@ namespace expresssolution
                 modificar.Nombre = txtNombre.Text;
                 modificar.Apellido = txtApellido.Text;
                 modificar.Email = txtEmail.Text;
-                modificar.Pass = ((Usuario)Session["UsuarioAModificar"]).Pass;
+
+                //modificaciones para poder cambiar la contraseña (solo puede cambiarsela el propio usuario, ej no un admin a un cliente)
+                if(txtContraNueva.Text == "")
+                {
+                    modificar.Pass = ((Usuario)Session["UsuarioAModificar"]).Pass;
+                } else
+                {
+                    if (negocio.VerificarContraseña(modificar.ID, txtContra.Text))
+                    {
+                        modificar.Pass = txtContraNueva.Text;
+                    } else
+                    {
+                        Session["Error"] = "La contraseña ingresada no es la correcta"; // esto deberia validarse antes del click
+                        Response.Redirect("Error.aspx", false);
+                    }
+                }
                 // puede agregarse el campo para modificar la contraseña solo hay que agregar unas modificaciones en "perfil.aspx" y agregar textbox y label.
                 // ya que la sentencia sql carga la pass, simplemente no se permite modificarla.
 
                 negocio.ModificarUsuario(modificar);
 
-                Response.Redirect("Principal.aspx", false);
+                Session["Exito"] = "Datos guardados exitosamente.";
+                Response.Redirect("Exito.aspx", false);
             }
             catch (Exception ex)
             {

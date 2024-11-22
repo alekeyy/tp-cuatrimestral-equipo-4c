@@ -176,7 +176,91 @@ namespace Negocio
                 datos.cerrarConexion();
             }
         }
-        
+
+        public Usuario BuscarCorreo(string correo)
+        {
+            AccesoDatos datos = new AccesoDatos();
+            Usuario usuario = new Usuario();
+            try
+            {
+
+                datos.setearConsulta("EXEC BUSCAR_CORREO @Correo");
+                datos.setearParametro("@Correo", correo);
+                datos.ejecutarLectura();
+
+                if (datos.Lector.Read())
+                {
+                    usuario.ID = (int)datos.Lector["ID"];
+                    usuario.Nombre = (string)datos.Lector["NombreCompleto"];
+                    usuario.Email = (string)datos.Lector["Email"];
+                    return usuario;
+                }
+                usuario.Email = null;
+                return usuario;
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+            finally
+            {
+                datos.cerrarConexion();
+            }
+        }
+
+        public void CambiarContraseña(int id, string pass)
+        {
+            AccesoDatos datos = new AccesoDatos();
+            Usuario usuario = new Usuario();
+            try
+            {
+
+                datos.setearConsulta("EXEC CAMBIAR_CONTRASEÑA @ID, @Pass");
+                datos.setearParametro("@ID", id);
+                datos.setearParametro("@Pass", pass);
+                datos.ejecutarAccion();
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+            finally
+            {
+                datos.cerrarConexion();
+            }
+        }
+
+        public bool VerificarContraseña(int id, string pass)
+        {
+            AccesoDatos datos = new AccesoDatos();
+            Usuario usuario = new Usuario();
+            try
+            {
+                datos.setearConsulta("EXEC VERIFICAR_CONTRASEÑA @ID, @Pass");
+                datos.setearParametro("@ID", id);
+                datos.setearParametro("@Pass", pass);
+                datos.ejecutarLectura();
+                if (datos.Lector.Read())
+                {
+                    usuario.ID = (int)datos.Lector["Id"];
+                    usuario.Pass = (string)datos.Lector["Pass"];
+                    if(usuario.ID == id && usuario.Pass == pass)
+                    {
+                        return true;
+                    }
+                }
+                return false;
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+            finally
+            {
+                datos.cerrarConexion();
+            }
+        }
+
         public int VerificarIncidenciasTelefonista(int id)
         {
             AccesoDatos datos = new AccesoDatos();

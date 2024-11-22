@@ -16,7 +16,7 @@
                     {%>
                     <span class="pregunta">¿Aun no sos parte?</span>
                 </p>
-                <asp:Button runat="server" CssClass="btn btn-primary d-flex justify-content-center p-2" Text="UNETE" ID="btnUnete" OnClick="btnUnete_Click" />
+                <asp:Button runat="server" CssClass="btn btn-unete d-flex justify-content-center p-2" Text="UNETE" ID="btnUnete" OnClick="btnUnete_Click" />
                 <%}
                     else
                     { %>
