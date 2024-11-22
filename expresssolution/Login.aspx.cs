@@ -20,15 +20,15 @@ namespace expresssolution
                 if (seguridad.verificadorNullVacioEnBlanco(txtEmail.Text))
                 {
                     txtCorreoObligatorio.Text = "*";
-                    txtCorreoObligatorio.ForeColor = System.Drawing.Color.Red;
+                    txtCorreoObligatorio.ForeColor = seguridad.escalasDeColores("");
                     txtEmail.Text = "";
                     txtObligatorio.Text = "los campos marcados son obligatorios";
-                    txtObligatorio.ForeColor = System.Drawing.Color.Red;
+                    txtObligatorio.ForeColor = seguridad.escalasDeColores("");
                 }
                 else if(seguridad.verificadorFormatoEmail(txtEmail.Text))
                 {
                     txtFormatoCorreo.Text = " (formato correcto -> correo@algo.com <-)";
-                    txtFormatoCorreo.ForeColor = System.Drawing.Color.Red;
+                    txtFormatoCorreo.ForeColor =seguridad.escalasDeColores("");
                     txtCorreoObligatorio.Text = "";
                 }
                 else
@@ -40,10 +40,10 @@ namespace expresssolution
                 if (seguridad.verificadorNullVacioEnBlanco(txtPass.Text))
                 {
                     txtPassObligatoria.Text = "*";
-                    txtPassObligatoria.ForeColor = System.Drawing.Color.Red;
+                    txtPassObligatoria.ForeColor = seguridad.escalasDeColores("");
                     txtPass.Text = "";
                     txtObligatorio.Text = "los campos marcados son obligatorios";
-                    txtObligatorio.ForeColor = System.Drawing.Color.Red;
+                    txtObligatorio.ForeColor =seguridad.escalasDeColores("");
                 }
                 else
                 {
@@ -58,8 +58,6 @@ namespace expresssolution
             else
             {
                 txtObligatorio.Text = "";
-                txtEmail.Text = "";
-                txtPass.Text = "";
             }
 
         }

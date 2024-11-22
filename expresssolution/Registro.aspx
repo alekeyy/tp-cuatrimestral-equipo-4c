@@ -15,14 +15,26 @@
                                 <div class="card-body">
                                     <h5 class="card-title texto-pagina">Registrate</h5>
                                     <div class="mt-1">
+
+                                        <asp:Label Text="" runat="server" ID="txtCamposObligatorios"/>
+                                        <br />
+
                                         <asp:Label Text="Nombre: " runat="server" CssClass="form-label" />
+                                        <asp:Label Text="" runat="server" ID="txtValidacionNombre"/>
                                         <asp:TextBox runat="server" CssClass="form-control" ID="txtNombre" AutoPostBack="true" />
+
                                         <asp:Label Text="Apellido: " runat="server" CssClass="form-label" />
+                                        <asp:Label Text="" runat="server" ID="txtValidacionApellido"/>
                                         <asp:TextBox runat="server" CssClass="form-control" ID="txtApellido" AutoPostBack="true" />
+
                                         <asp:Label Text="Correo: " runat="server" CssClass="form-label" />
+                                        <asp:Label Text="" runat="server" ID="txtValidacionCorreo"/>
                                         <asp:TextBox runat="server" CssClass="form-control" ID="txtEmail" AutoPostBack="true" />
+
                                         <asp:Label Text="Contraseña: " runat="server" CssClass="form-label" />
+                                        <asp:Label Text="" runat="server" ID="txtValidacionContraseña"/>
                                         <asp:TextBox runat="server" CssClass="form-control" ID="txtPass" type="password" AutoPostBack="true" />
+
                                     </div>
                                     <p>¿Ya tenes una cuenta existente? <a href="Login.aspx" class="card-text">Ingresa</a> </p>
                                     <div class="mt-3">

@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Drawing;
 using System.Linq;
 using System.Web;
 using System.Web.UI;
@@ -18,50 +19,77 @@ namespace expresssolution
             {
                 btnRegistrarse.Text = "Crear Usuario";
             }
+            btnRegistrarse.Enabled = false;
 
             if (IsPostBack)
             {
+
+                txtCamposObligatorios.Text = "Los campos marcados son obligatorios";
+                txtCamposObligatorios.ForeColor = seguridad.escalasDeColores("");
                 if (seguridad.verificadorNullVacioEnBlanco(txtNombre.Text))
                 {
-
+                    txtValidacionNombre.Text = "*";
+                    txtValidacionNombre.ForeColor = seguridad.escalasDeColores("");
+                    txtNombre.Text = "";
                 }
                 else
                 {
-
+                    txtValidacionNombre.Text = "";
                 }
 
                 if (seguridad.verificadorNullVacioEnBlanco(txtApellido.Text))
                 {
-
+                    txtValidacionApellido.Text = "*";
+                    txtValidacionApellido.ForeColor = seguridad.escalasDeColores("");
+                    txtApellido.Text = "";
                 }
                 else
                 {
-
+                    txtValidacionApellido.Text = "";
                 }
 
                 if (seguridad.verificadorNullVacioEnBlanco(txtEmail.Text))
                 {
-
+                    txtValidacionCorreo.Text = "*";
+                    txtValidacionCorreo.ForeColor = seguridad.escalasDeColores("");
+                    txtEmail.Text = "";
                 }
                 else if (seguridad.verificadorFormatoEmail(txtEmail.Text))
                 {
-
+                    txtValidacionCorreo.Text = " (Formato correcto -> correo@algo.com <-)";
+                    txtValidacionCorreo.ForeColor = seguridad.escalasDeColores("");
                 }
                 else
                 {
+                    txtValidacionCorreo.Text = "";
+                }
 
+                if (seguridad.validacionEmailRegistrado(txtEmail.Text))
+                {
+                    txtValidacionCorreo.Text = "Usted ya se encuentra registrado con este Email.";
+                    txtValidacionCorreo.ForeColor = seguridad.escalasDeColores("");
                 }
 
                 if (seguridad.verificadorNullVacioEnBlanco(txtPass.Text))
                 {
-
+                    txtValidacionContraseña.Text = "*";
+                    txtValidacionContraseña.ForeColor = seguridad.escalasDeColores("");
+                    txtPass.Text = "";
                 }
                 else
                 {
-
+                    txtValidacionContraseña.Text = seguridad.verificadorFortalezaContraseña(txtPass.Text);
+                    txtValidacionContraseña.ForeColor = seguridad.escalasDeColores(txtPass.Text);
                 }
-            }
 
+                if (!seguridad.verificadorNullVacioEnBlanco(txtNombre.Text) && !seguridad.validacionEmailRegistrado(txtEmail.Text) && !seguridad.verificadorNullVacioEnBlanco(txtApellido.Text) && !seguridad.verificadorNullVacioEnBlanco(txtEmail.Text) && !seguridad.verificadorNullVacioEnBlanco(txtPass.Text))
+                {
+                    txtCamposObligatorios.Text = "";
+                    btnRegistrarse.Enabled = true;
+                }
+                if (seguridad.verificadorFortalezaContraseña(txtPass.Text) == "Debil!" || seguridad.verificadorFortalezaContraseña(txtPass.Text) == "Basica!")
+                    btnRegistrarse.Enabled = false;
+            }
         }
         protected void btnRegistrarse_Click(object sender, EventArgs e)
         {
@@ -79,13 +107,14 @@ namespace expresssolution
                 usuario.tipoUsuario.Id = 1;
                 usuario.tipoUsuario.Descripcion = "CLIENTE";
                 usuario.ID = negocio.Registrarse(usuario);
-                if(usuario.ID > 0)
+                if (usuario.ID > 0)
                 {
                     if ((Usuario)Session["Usuario"] == null)
                     {
                         Session["Usuario"] = usuario;
                         Response.Redirect("Principal.aspx", false);
-                    } else
+                    }
+                    else
                     {
                         Response.Redirect("Exito.aspx", false);
                     }
@@ -98,7 +127,7 @@ namespace expresssolution
             }
             catch (Exception ex)
             {
-                Session["Error"] =  ex.ToString();
+                Session["Error"] = ex.ToString();
                 Response.Redirect("Error.aspx", false);
             }
         }
