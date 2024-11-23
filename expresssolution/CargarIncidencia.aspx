@@ -33,7 +33,7 @@
                     <div class="col">
                         <asp:Label Text="Descripcion de problematica: " runat="server" CssClass="form-label" />
                         <asp:Label Text="" runat="server" ID="lblDescripcionObligatoria"/>
-                        <asp:TextBox runat="server" ID="txtDescripcionIncidencia" CssClass="form-control" />
+                        <asp:TextBox runat="server" ID="txtDescripcionIncidencia" CssClass="form-control" AutoPostBack="true" />
                     </div>
                 </div>
 

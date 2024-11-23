@@ -26,6 +26,7 @@ namespace expresssolution
                 ddlCliente.Enabled = true;
                 ddlTelefonista.Enabled = true;
                 btnAgregar.Text = "Agregar";
+                btnAgregar.Enabled = false;
                 // los comentarios en la incidencia solo se pueden ingresar
                 // una vez que se cierra o se resuelve la misma.
                 txtComentarioIncidencia.Enabled = false;

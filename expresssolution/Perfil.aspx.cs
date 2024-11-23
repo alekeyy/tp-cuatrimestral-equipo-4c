@@ -58,6 +58,11 @@ namespace expresssolution
 
                             // toca verificar si el usuario modificado es un telefonista
                             // si es se actua, sino se sigue con normalidad.
+                            if(ddlTipoUsuario.SelectedIndex == 0)
+                            {
+                                ddlTipoUsuario.Enabled = false;
+                            }
+
                             if (ddlTipoUsuario.SelectedIndex == (2 - 1))
                             // se pone 2 que es el nivel de telefonista, se le resta uno para transformarlo en indice.
                             {
@@ -178,7 +183,6 @@ namespace expresssolution
 
                 negocio.ModificarUsuario(modificar);
 
-                Session["PaginaAnterior"] = "";
                 Session["Exito"] = "Datos guardados exitosamente.";
                 Response.Redirect("Exito.aspx", false);
             }
@@ -187,17 +191,22 @@ namespace expresssolution
                 Session["Error"] = ex.ToString();
                 Response.Redirect("Error.aspx", false);
             }
-
+            finally
+            {
+                Session["PaginaAnterior"] = "";
+            }
         }
 
         protected void btnCancelar_Click(object sender, EventArgs e)
         {
             try
             {
+                Session["PaginaAnterior"] = "";
                 Response.Redirect("Principal.aspx", false);
             }
             catch (Exception ex)
             {
+                Session["PaginaAnterior"] = "";
                 Session["Error"] = ex.ToString();
                 Response.Redirect("Error.aspx", false);
             }

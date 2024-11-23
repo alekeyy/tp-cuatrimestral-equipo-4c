@@ -116,6 +116,7 @@ namespace expresssolution
                     }
                     else
                     {
+                        Session["Exito"] = "Se creo el usuario con exito";
                         Response.Redirect("Exito.aspx", false);
                     }
                 }
