@@ -1,13 +1,7 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Drawing.Imaging;
-using System.Linq;
-using System.Web;
-using System.Web.UI;
-using System.Web.UI.WebControls;
-using Dominio;
+﻿using Dominio;
 using Negocio;
 using Seguridad;
+using System;
 
 namespace expresssolution
 {
@@ -25,10 +19,10 @@ namespace expresssolution
                     txtObligatorio.Text = "los campos marcados son obligatorios";
                     txtObligatorio.ForeColor = seguridad.escalasDeColores("");
                 }
-                else if(seguridad.verificadorFormatoEmail(txtEmail.Text))
+                else if (seguridad.verificadorFormatoEmail(txtEmail.Text))
                 {
                     txtFormatoCorreo.Text = " (formato correcto -> correo@algo.com <-)";
-                    txtFormatoCorreo.ForeColor =seguridad.escalasDeColores("");
+                    txtFormatoCorreo.ForeColor = seguridad.escalasDeColores("");
                     txtCorreoObligatorio.Text = "";
                 }
                 else
@@ -43,7 +37,7 @@ namespace expresssolution
                     txtPassObligatoria.ForeColor = seguridad.escalasDeColores("");
                     txtPass.Text = "";
                     txtObligatorio.Text = "los campos marcados son obligatorios";
-                    txtObligatorio.ForeColor =seguridad.escalasDeColores("");
+                    txtObligatorio.ForeColor = seguridad.escalasDeColores("");
                 }
                 else
                 {

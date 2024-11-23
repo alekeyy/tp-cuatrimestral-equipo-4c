@@ -1,15 +1,7 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Diagnostics.Eventing.Reader;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using accesoDatos;
 using Dominio;
-using Negocio;
+using System;
 using System.Drawing;
-using accesoDatos;
-using System.Runtime.Remoting.Messaging;
-using System.Runtime.InteropServices;
 
 namespace Seguridad
 {
@@ -33,7 +25,7 @@ namespace Seguridad
             Usuario usuario = user != null ? (Usuario)user : null;
             if (usuario != null)
             {
-                if(usuario.tipoUsuario.Descripcion == "ADMINISTRADOR")
+                if (usuario.tipoUsuario.Descripcion == "ADMINISTRADOR")
                 {
                     return true;
                 }
@@ -97,7 +89,8 @@ namespace Seguridad
             if (palabra.Length <= 5)
             {
                 return "Debil!";
-            }else
+            }
+            else
             {
                 switch (palabra.Length)
                 {
@@ -130,11 +123,11 @@ namespace Seguridad
                     case 7:
                         return Color.YellowGreen;
                     case 8:
-                        return  Color.YellowGreen;
+                        return Color.YellowGreen;
                     case 9:
-                        return  Color.Green;
+                        return Color.Green;
                     default:
-                        return  Color.Green;
+                        return Color.Green;
                 }
             }
         }
@@ -152,7 +145,7 @@ namespace Seguridad
                 cantidad = (int)datos.Lector["REGISTRADO"];
             }
 
-            if(cantidad != 0)
+            if (cantidad != 0)
             {
                 return true;
             }

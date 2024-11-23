@@ -3,7 +3,15 @@
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
     <div class="row"> 
         <div class="col">
-            <h3>Mis datos / Configuracion Perfil (depende del analisis posterior de session)</h3>
+            <%if (Session["IdAModificar"] == null)
+            {%>
+                <h3>Mis datos</h3>
+            <%}
+            else
+            {%>
+                <h3>Configuracion Perfil</h3>
+            <%}%>
+            
 
             <asp:UpdatePanel runat="server">
                 <ContentTemplate>

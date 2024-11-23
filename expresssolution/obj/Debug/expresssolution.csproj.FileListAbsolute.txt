@@ -200,6 +200,8 @@ C:\Users\poky1975\Desktop\tp-cuatrimestral-equipo-4c\expresssolution\obj\Debug\e
 C:\Users\poky1975\Desktop\tp-cuatrimestral-equipo-4c\expresssolution\obj\Debug\expresss.6C4738B9.Up2Date
 C:\Users\poky1975\Desktop\tp-cuatrimestral-equipo-4c\expresssolution\obj\Debug\expresssolution.dll
 C:\Users\poky1975\Desktop\tp-cuatrimestral-equipo-4c\expresssolution\obj\Debug\expresssolution.pdb
+C:\Users\Usuario\Desktop\UTN\PROG 3\tp-cuatrimestral-equipo-4c\tp-cuatrimestral-equipo-4c\expresssolution\bin\EmailService.dll
+C:\Users\Usuario\Desktop\UTN\PROG 3\tp-cuatrimestral-equipo-4c\tp-cuatrimestral-equipo-4c\expresssolution\bin\EmailService.pdb
 C:\Users\poky1975\Documents\GitHub\tp-cuatrimestral-equipo-4c\expresssolution\bin\expresssolution.dll.config
 C:\Users\poky1975\Documents\GitHub\tp-cuatrimestral-equipo-4c\expresssolution\bin\expresssolution.dll
 C:\Users\poky1975\Documents\GitHub\tp-cuatrimestral-equipo-4c\expresssolution\bin\expresssolution.pdb
@@ -255,11 +257,13 @@ C:\Users\poky1975\Documents\GitHub\tp-cuatrimestral-equipo-4c\expresssolution\bi
 C:\Users\poky1975\Documents\GitHub\tp-cuatrimestral-equipo-4c\expresssolution\bin\accesoDatos.dll
 C:\Users\poky1975\Documents\GitHub\tp-cuatrimestral-equipo-4c\expresssolution\bin\AspNet.ScriptManager.bootstrap.dll
 C:\Users\poky1975\Documents\GitHub\tp-cuatrimestral-equipo-4c\expresssolution\bin\Dominio.dll
+C:\Users\poky1975\Documents\GitHub\tp-cuatrimestral-equipo-4c\expresssolution\bin\EmailService.dll
 C:\Users\poky1975\Documents\GitHub\tp-cuatrimestral-equipo-4c\expresssolution\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll
 C:\Users\poky1975\Documents\GitHub\tp-cuatrimestral-equipo-4c\expresssolution\bin\Negocio.dll
 C:\Users\poky1975\Documents\GitHub\tp-cuatrimestral-equipo-4c\expresssolution\bin\Seguridad.dll
 C:\Users\poky1975\Documents\GitHub\tp-cuatrimestral-equipo-4c\expresssolution\bin\accesoDatos.pdb
 C:\Users\poky1975\Documents\GitHub\tp-cuatrimestral-equipo-4c\expresssolution\bin\Dominio.pdb
+C:\Users\poky1975\Documents\GitHub\tp-cuatrimestral-equipo-4c\expresssolution\bin\EmailService.pdb
 C:\Users\poky1975\Documents\GitHub\tp-cuatrimestral-equipo-4c\expresssolution\bin\Negocio.pdb
 C:\Users\poky1975\Documents\GitHub\tp-cuatrimestral-equipo-4c\expresssolution\bin\Seguridad.pdb
 C:\Users\poky1975\Documents\GitHub\tp-cuatrimestral-equipo-4c\expresssolution\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.xml
@@ -268,7 +272,3 @@ C:\Users\poky1975\Documents\GitHub\tp-cuatrimestral-equipo-4c\expresssolution\ob
 C:\Users\poky1975\Documents\GitHub\tp-cuatrimestral-equipo-4c\expresssolution\obj\Debug\expresss.6C4738B9.Up2Date
 C:\Users\poky1975\Documents\GitHub\tp-cuatrimestral-equipo-4c\expresssolution\obj\Debug\expresssolution.dll
 C:\Users\poky1975\Documents\GitHub\tp-cuatrimestral-equipo-4c\expresssolution\obj\Debug\expresssolution.pdb
-C:\Users\Usuario\Desktop\UTN\PROG 3\tp-cuatrimestral-equipo-4c\tp-cuatrimestral-equipo-4c\expresssolution\bin\EmailService.dll
-C:\Users\Usuario\Desktop\UTN\PROG 3\tp-cuatrimestral-equipo-4c\tp-cuatrimestral-equipo-4c\expresssolution\bin\EmailService.pdb
-C:\Users\poky1975\Documents\GitHub\tp-cuatrimestral-equipo-4c\expresssolution\bin\EmailService.dll
-C:\Users\poky1975\Documents\GitHub\tp-cuatrimestral-equipo-4c\expresssolution\bin\EmailService.pdb

@@ -1,0 +1,11 @@
+C:\Users\poky1975\Documents\GitHub\tp-cuatrimestral-equipo-4c\Negocio\bin\Release\Negocio.dll
+C:\Users\poky1975\Documents\GitHub\tp-cuatrimestral-equipo-4c\Negocio\bin\Release\Negocio.pdb
+C:\Users\poky1975\Documents\GitHub\tp-cuatrimestral-equipo-4c\Negocio\bin\Release\accesoDatos.dll
+C:\Users\poky1975\Documents\GitHub\tp-cuatrimestral-equipo-4c\Negocio\bin\Release\Dominio.dll
+C:\Users\poky1975\Documents\GitHub\tp-cuatrimestral-equipo-4c\Negocio\bin\Release\accesoDatos.pdb
+C:\Users\poky1975\Documents\GitHub\tp-cuatrimestral-equipo-4c\Negocio\bin\Release\Dominio.pdb
+C:\Users\poky1975\Documents\GitHub\tp-cuatrimestral-equipo-4c\Negocio\obj\Release\Negocio.csproj.AssemblyReference.cache
+C:\Users\poky1975\Documents\GitHub\tp-cuatrimestral-equipo-4c\Negocio\obj\Release\Negocio.csproj.CoreCompileInputs.cache
+C:\Users\poky1975\Documents\GitHub\tp-cuatrimestral-equipo-4c\Negocio\obj\Release\Negocio.csproj.Up2Date
+C:\Users\poky1975\Documents\GitHub\tp-cuatrimestral-equipo-4c\Negocio\obj\Release\Negocio.dll
+C:\Users\poky1975\Documents\GitHub\tp-cuatrimestral-equipo-4c\Negocio\obj\Release\Negocio.pdb

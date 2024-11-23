@@ -1,10 +1,5 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Web;
-using System.Web.UI;
-using System.Web.UI.WebControls;
-using Seguridad;
+﻿using Seguridad;
+using System;
 
 namespace expresssolution
 {
@@ -13,7 +8,7 @@ namespace expresssolution
         protected void Page_Load(object sender, EventArgs e)
         {
 
-            if(!(Page is Login || Page is Default || Page is Registro || Page is Error || Page is Recuperar || Page is Exito))
+            if (!(Page is Login || Page is Default || Page is Registro || Page is Error || Page is Recuperar || Page is Exito))
             {
                 if (!seguridad.SessionActiva(Session["usuario"]))
                 {

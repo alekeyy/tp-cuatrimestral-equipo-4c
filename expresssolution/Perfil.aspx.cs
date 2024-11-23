@@ -1,14 +1,7 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Web;
-using System.Web.UI;
-using System.Web.UI.WebControls;
+﻿using Dominio;
 using Negocio;
-using Dominio;
 using Seguridad;
-using System.Web.Configuration;
-using System.Runtime.CompilerServices;
+using System;
 
 namespace expresssolution
 {
@@ -34,7 +27,9 @@ namespace expresssolution
 
                     if (seguridad.EsAdmin(actual))
                     {
-                        if ((string)Session["PaginaAnterior"] == "Lista de usuarios" || (string)Session["PaginaAnterior"] == "Modificando")
+                        if ((string)Session["PaginaAnterior"] == "Lista de usuarios" || 
+                            (string)Session["PaginaAnterior"] == "Modificando" && 
+                            (int)actual.ID == (int)Session["IdAModificar"])
                         {
                             UsuarioNegocio negocio = new UsuarioNegocio();
                             Usuario modificar = new Usuario();
@@ -58,7 +53,7 @@ namespace expresssolution
 
                             // toca verificar si el usuario modificado es un telefonista
                             // si es se actua, sino se sigue con normalidad.
-                            if(ddlTipoUsuario.SelectedIndex == 0)
+                            if (ddlTipoUsuario.SelectedIndex == 0)
                             {
                                 ddlTipoUsuario.Enabled = false;
                             }
@@ -164,15 +159,17 @@ namespace expresssolution
                 modificar.Email = txtEmail.Text;
 
                 //modificaciones para poder cambiar la contraseña (solo puede cambiarsela el propio usuario, ej no un admin a un cliente)
-                if(txtContraNueva.Text == "")
+                if (txtContraNueva.Text == "")
                 {
                     modificar.Pass = ((Usuario)Session["UsuarioAModificar"]).Pass;
-                } else
+                }
+                else
                 {
                     if (negocio.VerificarContraseña(modificar.ID, txtContra.Text))
                     {
                         modificar.Pass = txtContraNueva.Text;
-                    } else
+                    }
+                    else
                     {
                         Session["Error"] = "La contraseña ingresada no es la correcta"; // esto deberia validarse antes del click
                         Response.Redirect("Error.aspx", false);
@@ -194,6 +191,7 @@ namespace expresssolution
             finally
             {
                 Session["PaginaAnterior"] = "";
+                Session["IdAModificar"] = null;
             }
         }
 
@@ -202,11 +200,13 @@ namespace expresssolution
             try
             {
                 Session["PaginaAnterior"] = "";
+                Session["IdAModificar"] = null;
                 Response.Redirect("Principal.aspx", false);
             }
             catch (Exception ex)
             {
                 Session["PaginaAnterior"] = "";
+                Session["IdAModificar"] = null;
                 Session["Error"] = ex.ToString();
                 Response.Redirect("Error.aspx", false);
             }

@@ -1,13 +1,8 @@
 ﻿using Dominio;
+using EmailService;
 using Negocio;
 using Seguridad;
-using EmailService;
 using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Web;
-using System.Web.UI;
-using System.Web.UI.WebControls;
 
 namespace expresssolution
 {
@@ -60,10 +55,10 @@ namespace expresssolution
 
                 Usuario recuperado = negocio.BuscarCorreo(email);
                 string passNueva = PassRandom();
-                if(!(recuperado.Email is null))
+                if (!(recuperado.Email is null))
                 {
 
-                    emailService.armarCorreo(email, "RECUPERAR CONTRASEÑA", "Estimado " + recuperado.Nombre + " se le ha otorgado la siguiente contraseña para iniciar sesion: "+ passNueva +".");
+                    emailService.armarCorreo(email, "RECUPERAR CONTRASEÑA", "Estimado " + recuperado.Nombre + " se le ha otorgado la siguiente contraseña para iniciar sesion: " + passNueva + ".");
                     emailService.enviarCorreo();
                     negocio.CambiarContraseña(recuperado.ID, passNueva);
                     Session["Exito"] = "Se ha enviado correctamente el correo para recuperar la contraseña.";
@@ -71,7 +66,7 @@ namespace expresssolution
                 }
 
                 //label nuevo que diga solicitado con exito
-            } 
+            }
             catch (Exception ex)
             {
                 Session.Add("error", ex.ToString());
@@ -83,7 +78,7 @@ namespace expresssolution
             Random random = new Random();
             string letras = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ1234567890";
             string pass = "";
-            for(int i = 0; i < 5; i++)
+            for (int i = 0; i < 5; i++)
             {
                 pass += (random.Next(10, 500)).ToString();
                 pass += letras[random.Next(0, 53)];

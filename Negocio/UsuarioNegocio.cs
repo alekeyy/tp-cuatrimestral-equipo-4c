@@ -2,16 +2,10 @@
 using Dominio;
 using System;
 using System.Collections.Generic;
-using System.Diagnostics.Eventing.Reader;
-using System.Linq;
-using System.Runtime.InteropServices;
-using System.Security.AccessControl;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace Negocio
 {
-    public class UsuarioNegocio 
+    public class UsuarioNegocio
     {
         public List<Usuario> listar()
         {
@@ -142,7 +136,7 @@ namespace Negocio
                 throw ex;
             }
         }
-        
+
         public Usuario BuscarUsuario(int id)
         {
             AccesoDatos datos = new AccesoDatos();
@@ -244,7 +238,7 @@ namespace Negocio
                 {
                     usuario.ID = (int)datos.Lector["Id"];
                     usuario.Pass = (string)datos.Lector["Pass"];
-                    if(usuario.ID == id && usuario.Pass == pass)
+                    if (usuario.ID == id && usuario.Pass == pass)
                     {
                         return true;
                     }
@@ -282,7 +276,7 @@ namespace Negocio
                 datos.cerrarConexion();
             }
         }
-        
+
         public void ModificarUsuario(Usuario modificar)
         {
             AccesoDatos datos = new AccesoDatos();
@@ -308,5 +302,5 @@ namespace Negocio
             }
 
         }
-    } 
+    }
 }

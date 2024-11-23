@@ -1,0 +1,13 @@
+C:\Users\poky1975\Documents\GitHub\tp-cuatrimestral-equipo-4c\Seguridad\bin\Release\Seguridad.dll
+C:\Users\poky1975\Documents\GitHub\tp-cuatrimestral-equipo-4c\Seguridad\bin\Release\Seguridad.pdb
+C:\Users\poky1975\Documents\GitHub\tp-cuatrimestral-equipo-4c\Seguridad\bin\Release\accesoDatos.dll
+C:\Users\poky1975\Documents\GitHub\tp-cuatrimestral-equipo-4c\Seguridad\bin\Release\Dominio.dll
+C:\Users\poky1975\Documents\GitHub\tp-cuatrimestral-equipo-4c\Seguridad\bin\Release\Negocio.dll
+C:\Users\poky1975\Documents\GitHub\tp-cuatrimestral-equipo-4c\Seguridad\bin\Release\accesoDatos.pdb
+C:\Users\poky1975\Documents\GitHub\tp-cuatrimestral-equipo-4c\Seguridad\bin\Release\Dominio.pdb
+C:\Users\poky1975\Documents\GitHub\tp-cuatrimestral-equipo-4c\Seguridad\bin\Release\Negocio.pdb
+C:\Users\poky1975\Documents\GitHub\tp-cuatrimestral-equipo-4c\Seguridad\obj\Release\Seguridad.csproj.AssemblyReference.cache
+C:\Users\poky1975\Documents\GitHub\tp-cuatrimestral-equipo-4c\Seguridad\obj\Release\Seguridad.csproj.CoreCompileInputs.cache
+C:\Users\poky1975\Documents\GitHub\tp-cuatrimestral-equipo-4c\Seguridad\obj\Release\Seguridad.csproj.Up2Date
+C:\Users\poky1975\Documents\GitHub\tp-cuatrimestral-equipo-4c\Seguridad\obj\Release\Seguridad.dll
+C:\Users\poky1975\Documents\GitHub\tp-cuatrimestral-equipo-4c\Seguridad\obj\Release\Seguridad.pdb

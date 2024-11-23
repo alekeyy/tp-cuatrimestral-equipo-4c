@@ -1,0 +1,6 @@
+C:\Users\poky1975\Documents\GitHub\tp-cuatrimestral-equipo-4c\Dominio\bin\Release\Dominio.dll
+C:\Users\poky1975\Documents\GitHub\tp-cuatrimestral-equipo-4c\Dominio\bin\Release\Dominio.pdb
+C:\Users\poky1975\Documents\GitHub\tp-cuatrimestral-equipo-4c\Dominio\obj\Release\Dominio.csproj.AssemblyReference.cache
+C:\Users\poky1975\Documents\GitHub\tp-cuatrimestral-equipo-4c\Dominio\obj\Release\Dominio.csproj.CoreCompileInputs.cache
+C:\Users\poky1975\Documents\GitHub\tp-cuatrimestral-equipo-4c\Dominio\obj\Release\Dominio.dll
+C:\Users\poky1975\Documents\GitHub\tp-cuatrimestral-equipo-4c\Dominio\obj\Release\Dominio.pdb

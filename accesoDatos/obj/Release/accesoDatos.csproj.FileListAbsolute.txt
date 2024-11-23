@@ -1,0 +1,6 @@
+C:\Users\poky1975\Documents\GitHub\tp-cuatrimestral-equipo-4c\accesoDatos\bin\Release\accesoDatos.dll
+C:\Users\poky1975\Documents\GitHub\tp-cuatrimestral-equipo-4c\accesoDatos\bin\Release\accesoDatos.pdb
+C:\Users\poky1975\Documents\GitHub\tp-cuatrimestral-equipo-4c\accesoDatos\obj\Release\accesoDatos.csproj.AssemblyReference.cache
+C:\Users\poky1975\Documents\GitHub\tp-cuatrimestral-equipo-4c\accesoDatos\obj\Release\accesoDatos.csproj.CoreCompileInputs.cache
+C:\Users\poky1975\Documents\GitHub\tp-cuatrimestral-equipo-4c\accesoDatos\obj\Release\accesoDatos.dll
+C:\Users\poky1975\Documents\GitHub\tp-cuatrimestral-equipo-4c\accesoDatos\obj\Release\accesoDatos.pdb

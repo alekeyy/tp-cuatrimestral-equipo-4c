@@ -1,9 +1,5 @@
 ﻿using Negocio;
 using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Web;
-using System.Web.UI;
 using System.Web.UI.WebControls;
 
 namespace expresssolution
@@ -31,11 +27,12 @@ namespace expresssolution
 
             if (!IsPostBack)
             {
-                if (Seguridad.seguridad.EsAdmin(Session["usuario"])) 
+                if (Seguridad.seguridad.EsAdmin(Session["usuario"]))
                 {
                     dgvListaUsuarios.Columns[4].Visible = true;
                     dgvListaClientes.Columns[4].Visible = true;
-                } else
+                }
+                else
                 {
                     dgvListaUsuarios.Columns[4].Visible = false;
                     dgvListaClientes.Columns[4].Visible = false;
