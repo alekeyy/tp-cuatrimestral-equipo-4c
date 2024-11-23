@@ -190,6 +190,14 @@ namespace expresssolution
                 //-----------------------VALIDACIONES GENERALES--------------------------------------------------------
                 if (IsPostBack)
                 {
+
+                    // modificacion para que el postback no vuelva a reactivar la ddl de clientes impidiendo asi su modificacion.
+                    if ((string)Session["PaginaAnterior"] == "Cargar Incidencia")
+                    {
+                        ddlCliente.Enabled = false;
+                        btnAgregar.Text = "Modificar";
+                    }
+
                     if (seguridad.verificadorNullVacioEnBlanco(txtDescripcionIncidencia.Text))
                     {
                         lblDescripcionObligatoria.Text = "*";
