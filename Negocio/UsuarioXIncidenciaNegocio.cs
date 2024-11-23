@@ -47,7 +47,7 @@ namespace Negocio
 
                 datos.setearParametro("@IDINCIDENCIA", (int)nueva.IDIncidencia == -1 ? (object)DBNull.Value : (int)nueva.IDIncidencia);
                 datos.setearParametro("@IDTIPOINCIDENCIA", (object)actualizacion.IDTipoIncidencia ?? DBNull.Value);
-                datos.setearParametro("@IDPRIORIDADINCIDENCIA", (object)actualizacion.IDTipoIncidencia ?? DBNull.Value);
+                datos.setearParametro("@IDPRIORIDADINCIDENCIA", (object)actualizacion.IDPrioridadIncidencia ?? DBNull.Value);
                 datos.setearParametro("@IDESTADO", (object)actualizacion.IDEstado ?? DBNull.Value);
                 datos.setearParametro("@COMENTARIOS", !string.IsNullOrEmpty(actualizacion.Comentarios) ? actualizacion.Comentarios : (object)DBNull.Value);
                 datos.ejecutarAccion();

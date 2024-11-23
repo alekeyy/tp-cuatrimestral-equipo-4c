@@ -63,7 +63,8 @@ namespace expresssolution
                 }
 
 
-                if ((string)Session["PaginaAnterior"] == "Incidencias")
+                //---------APARTADO DE MODIFICACION DE INCIDENCIAS--------------------------------------------------------
+                if ((string)Session["PaginaAnterior"] == "Incidencias" && !IsPostBack)
                 {
                     bandera = false;
                     Session["PaginaAnterior"] = Title.ToString();
@@ -92,12 +93,6 @@ namespace expresssolution
                             break;
                         }
                         contadorGeneral++;
-                    }
-
-                    if (bandera)
-                    {
-                        // se "borra" el registro de la pagina anterior
-                        Session["PaginaAnterior"] = "";
                     }
 
                     txtDescripcionIncidencia.Text = usuarioXIncidencia.Descripcion;
@@ -152,9 +147,17 @@ namespace expresssolution
 
                     txtComentarioIncidencia.Text = incidencia.Comentarios;
 
+                    btnAgregar.Enabled = true;
+                }
+
+                if (bandera && !IsPostBack)
+                {
+                    // se "borra" el registro de la pagina anterior
+                    Session["PaginaAnterior"] = "";
                 }
 
 
+                //---------APARTADO DE CARGA DE CLIENTE--------------------------------------------------------
                 // verifica si el usuario actual es un cliente, en caso de que si
                 if (seguridad.EsCliente(aux))
                 {
@@ -173,6 +176,7 @@ namespace expresssolution
                     }
                 }
 
+                //---------APARTADO DE CARGA DE INCIDENCIAS TELEFONISTA--------------------------------------------------------
                 if (seguridad.EsTelefonista(aux))
                 {
                     contadorGeneral = 0;
@@ -187,6 +191,76 @@ namespace expresssolution
                         contadorGeneral++;
                     }
                 }
+
+                //-----------------------VALIDACIONES GENERALES--------------------------------------------------------
+                if (IsPostBack)
+                {
+                    if (seguridad.verificadorNullVacioEnBlanco(txtDescripcionIncidencia.Text))
+                    {
+                        lblDescripcionObligatoria.Text = "*";
+                        lblDescripcionObligatoria.ForeColor = seguridad.escalasDeColores("");
+                        lblValidadorObligatorio.Text = "Es obligatorio rellenar los campos marcados";
+                        lblValidadorObligatorio.ForeColor = seguridad.escalasDeColores("");
+
+                        btnAgregar.Enabled = false;
+                    }
+                    else if (seguridad.verificadorMaximoCaracteres(txtDescripcionIncidencia.Text))
+                    {
+                        lblDescripcionObligatoria.Text = " (La cantidad de caracteres no puede superar los 300)";
+                        lblDescripcionObligatoria.ForeColor = seguridad.escalasDeColores("");
+                        lblValidadorObligatorio.Text = "";
+
+                        btnAgregar.Enabled = false;
+                    }
+                    else
+                    {
+                        lblDescripcionObligatoria.Text = "";
+                        lblValidadorObligatorio.Text = "";
+
+                        btnAgregar.Enabled = true;
+                    }
+
+                    if (!seguridad.EsCliente(aux))
+                    {
+                        if (ddlEstadoIncidencia.SelectedIndex == 2 || ddlEstadoIncidencia.SelectedIndex == 5)
+                        {
+                            txtComentarioIncidencia.Enabled = true;
+                            if (seguridad.verificadorNullVacioEnBlanco(txtComentarioIncidencia.Text))
+                            {
+                                lblComentarioObligatorio.Text = "*";
+                                lblComentarioObligatorio.ForeColor = seguridad.escalasDeColores("");
+                                lblValidadorObligatorio.Text = "Es obligatorio rellenar los campos marcados";
+                                lblValidadorObligatorio.ForeColor = seguridad.escalasDeColores("");
+
+                                btnAgregar.Enabled = false;
+                            }
+                            else if (seguridad.verificadorMaximoCaracteres(txtComentarioIncidencia.Text))
+                            {
+                                lblComentarioObligatorio.Text = " (La cantidad de caracteres no puede superar los 300)";
+                                lblComentarioObligatorio.ForeColor = seguridad.escalasDeColores("");
+                                lblValidadorObligatorio.Text = "";
+
+                                btnAgregar.Enabled = false;
+                            }
+                            else
+                            {
+                                lblComentarioObligatorio.Text = "";
+                                lblValidadorObligatorio.Text = "";
+
+                                btnAgregar.Enabled = true;
+                            }
+                        }
+                        else
+                        {
+                            lblComentarioObligatorio.Text = "";
+                            lblValidadorObligatorio.Text = "";
+                            txtComentarioIncidencia.Text = "";
+                            txtComentarioIncidencia.Enabled = false;
+                            btnAgregar.Enabled = true;
+                        }
+                    }
+                }
+
             }
             catch (Exception ex)
             {
@@ -256,17 +330,5 @@ namespace expresssolution
             }
         }
 
-        protected void ddlEstadoIncidencia_SelectedIndexChanged(object sender, EventArgs e)
-        {
-            ddlCliente.Enabled = false;
-            if (ddlEstadoIncidencia.SelectedIndex == 2 || ddlEstadoIncidencia.SelectedIndex == 5)
-            {
-                txtComentarioIncidencia.Enabled = true;
-            }
-            else
-            {
-                txtComentarioIncidencia.Enabled = false;
-            }
-        }
     }
 }

@@ -161,5 +161,13 @@ namespace Seguridad
                 return false;
             }
         }
+        public static bool verificadorMaximoCaracteres(string palabra)
+        {
+            if (palabra.Length > 300)
+            {
+                return true;
+            }
+            return false;
+        }
     }
 }

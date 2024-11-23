@@ -15,6 +15,15 @@ namespace expresssolution
     {
 
         /// <summary>
+        /// Control lblValidadorObligatorio.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label lblValidadorObligatorio;
+
+        /// <summary>
         /// Control txtNombreIncidencia.
         /// </summary>
         /// <remarks>
@@ -31,6 +40,15 @@ namespace expresssolution
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
         protected global::System.Web.UI.WebControls.DropDownList ddlCliente;
+
+        /// <summary>
+        /// Control lblDescripcionObligatoria.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label lblDescripcionObligatoria;
 
         /// <summary>
         /// Control txtDescripcionIncidencia.
@@ -76,6 +94,15 @@ namespace expresssolution
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
         protected global::System.Web.UI.WebControls.DropDownList ddlTelefonista;
+
+        /// <summary>
+        /// Control lblComentarioObligatorio.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label lblComentarioObligatorio;
 
         /// <summary>
         /// Control txtComentarioIncidencia.

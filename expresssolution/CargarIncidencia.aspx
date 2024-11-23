@@ -9,6 +9,7 @@
             <div class="row">
                 <div class="col">
                     <h3>Bienvenido a la seccion de carga de incidencias</h3>
+                    <asp:Label Text="" runat="server" ID="lblValidadorObligatorio"/>
                     <% /* %>
                         (en este caso dependiendo el usuario que acceda hay que validarlo 
                         <br />
@@ -31,6 +32,7 @@
                     </div>
                     <div class="col">
                         <asp:Label Text="Descripcion de problematica: " runat="server" CssClass="form-label" />
+                        <asp:Label Text="" runat="server" ID="lblDescripcionObligatoria"/>
                         <asp:TextBox runat="server" ID="txtDescripcionIncidencia" CssClass="form-control" />
                     </div>
                 </div>
@@ -40,7 +42,7 @@
                         <div class="row">
                             <div class="col">
                                 <asp:Label Text="Estado: " runat="server" CssClass="form-label" />
-                                <asp:DropDownList runat="server" ID="ddlEstadoIncidencia" CssClass="form-control" OnSelectedIndexChanged="ddlEstadoIncidencia_SelectedIndexChanged" AutoPostBack="true">
+                                <asp:DropDownList runat="server" ID="ddlEstadoIncidencia" CssClass="form-control" AutoPostBack="true">
                                 </asp:DropDownList>
                             </div>
                             <div class="col">
@@ -61,7 +63,8 @@
                         </div>
                         <div class="col">
                             <asp:Label Text="Comentario: " runat="server" CssClass="form-label" />
-                            <asp:TextBox runat="server" ID="txtComentarioIncidencia" CssClass="form-control" />
+                        <asp:Label Text="" runat="server" ID="lblComentarioObligatorio"/>
+                            <asp:TextBox runat="server" ID="txtComentarioIncidencia" CssClass="form-control" AutoPostBack="true"/>
                         </div>
 
                 <%} %>

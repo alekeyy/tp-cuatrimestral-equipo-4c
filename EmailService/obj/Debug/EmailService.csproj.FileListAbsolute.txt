@@ -4,3 +4,9 @@ C:\Users\Usuario\Desktop\UTN\PROG 3\tp-cuatrimestral-equipo-4c\tp-cuatrimestral-
 C:\Users\Usuario\Desktop\UTN\PROG 3\tp-cuatrimestral-equipo-4c\tp-cuatrimestral-equipo-4c\EmailService\obj\Debug\EmailService.csproj.CoreCompileInputs.cache
 C:\Users\Usuario\Desktop\UTN\PROG 3\tp-cuatrimestral-equipo-4c\tp-cuatrimestral-equipo-4c\EmailService\obj\Debug\EmailService.dll
 C:\Users\Usuario\Desktop\UTN\PROG 3\tp-cuatrimestral-equipo-4c\tp-cuatrimestral-equipo-4c\EmailService\obj\Debug\EmailService.pdb
+C:\Users\poky1975\Documents\GitHub\tp-cuatrimestral-equipo-4c\EmailService\bin\Debug\EmailService.dll
+C:\Users\poky1975\Documents\GitHub\tp-cuatrimestral-equipo-4c\EmailService\bin\Debug\EmailService.pdb
+C:\Users\poky1975\Documents\GitHub\tp-cuatrimestral-equipo-4c\EmailService\obj\Debug\EmailService.csproj.AssemblyReference.cache
+C:\Users\poky1975\Documents\GitHub\tp-cuatrimestral-equipo-4c\EmailService\obj\Debug\EmailService.csproj.CoreCompileInputs.cache
+C:\Users\poky1975\Documents\GitHub\tp-cuatrimestral-equipo-4c\EmailService\obj\Debug\EmailService.dll
+C:\Users\poky1975\Documents\GitHub\tp-cuatrimestral-equipo-4c\EmailService\obj\Debug\EmailService.pdb

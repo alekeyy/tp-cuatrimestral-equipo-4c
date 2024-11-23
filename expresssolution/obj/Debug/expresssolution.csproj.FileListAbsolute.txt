@@ -270,3 +270,5 @@ C:\Users\poky1975\Documents\GitHub\tp-cuatrimestral-equipo-4c\expresssolution\ob
 C:\Users\poky1975\Documents\GitHub\tp-cuatrimestral-equipo-4c\expresssolution\obj\Debug\expresssolution.pdb
 C:\Users\Usuario\Desktop\UTN\PROG 3\tp-cuatrimestral-equipo-4c\tp-cuatrimestral-equipo-4c\expresssolution\bin\EmailService.dll
 C:\Users\Usuario\Desktop\UTN\PROG 3\tp-cuatrimestral-equipo-4c\tp-cuatrimestral-equipo-4c\expresssolution\bin\EmailService.pdb
+C:\Users\poky1975\Documents\GitHub\tp-cuatrimestral-equipo-4c\expresssolution\bin\EmailService.dll
+C:\Users\poky1975\Documents\GitHub\tp-cuatrimestral-equipo-4c\expresssolution\bin\EmailService.pdb
