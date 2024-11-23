@@ -18,7 +18,7 @@
                 <asp:BoundField HeaderText="Nombre" DataField="Nombre"/>
                 <asp:BoundField HeaderText="Telefonista Asignado" DataField="Telefonista"/>
                 <asp:BoundField HeaderText="Descripcion" DataField="Descripcion"/>
-                <asp:CommandField HeaderText="Accion" ShowSelectButton="true" SelectText=" Modificar "/>
+                <asp:CommandField HeaderText="Accion" ShowSelectButton="true" SelectText=" Modificar"/>
             </Columns>
         </asp:GridView>
 

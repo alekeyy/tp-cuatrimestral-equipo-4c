@@ -27,7 +27,7 @@ namespace expresssolution
                     dgvListaIncidenciasAsignadas.Columns[0].Visible = false;
                     dgvListaIncidenciasAsignadas.Columns[2].Visible = false;
                     dgvListaIncidenciasAsignadas.Columns[3].Visible = false;
-                    dgvListaIncidenciasAsignadas.Columns[5].Visible = false;
+                    dgvListaIncidenciasAsignadas.Columns[5].Visible = true;
                 }
             }
             catch (Exception ex)

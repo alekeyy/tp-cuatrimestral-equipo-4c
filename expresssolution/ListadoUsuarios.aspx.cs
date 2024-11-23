@@ -34,9 +34,11 @@ namespace expresssolution
                 if (Seguridad.seguridad.EsAdmin(Session["usuario"])) 
                 {
                     dgvListaUsuarios.Columns[4].Visible = true;
+                    dgvListaClientes.Columns[4].Visible = true;
                 } else
                 {
                     dgvListaUsuarios.Columns[4].Visible = false;
+                    dgvListaClientes.Columns[4].Visible = false;
                 }
             }
         }

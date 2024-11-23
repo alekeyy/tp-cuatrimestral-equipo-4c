@@ -34,23 +34,27 @@ namespace expresssolution
 
                     if (seguridad.EsAdmin(actual))
                     {
-                        if ((string)Session["PaginaAnterior"] == "Lista de usuarios")
+                        if ((string)Session["PaginaAnterior"] == "Lista de usuarios" || (string)Session["PaginaAnterior"] == "Modificando")
                         {
                             UsuarioNegocio negocio = new UsuarioNegocio();
                             Usuario modificar = new Usuario();
 
                             // se asigna como pagina anterior la pagina actual.
-                            Session["PaginaAnterior"] = "Perfil";
+                            Session["PaginaAnterior"] = "Modificando";
 
-                            // se busca el usuario por id
-                            modificar = negocio.BuscarUsuario((int)Session["IdAModificar"]);
 
                             // se precargan los datos
-                            ddlTipoUsuario.SelectedIndex = modificar.tipoUsuario.Id - 1;
-                            ddlTipoUsuario.DataBind();
-                            txtNombre.Text = modificar.Nombre;
-                            txtApellido.Text = modificar.Apellido;
-                            txtEmail.Text = modificar.Email;
+                            if (!IsPostBack)
+                            {
+                                // se busca el usuario por id
+                                modificar = negocio.BuscarUsuario((int)Session["IdAModificar"]);
+                                ddlTipoUsuario.SelectedIndex = modificar.tipoUsuario.Id - 1;
+                                ddlTipoUsuario.DataBind();
+                                txtNombre.Text = modificar.Nombre;
+                                txtApellido.Text = modificar.Apellido;
+                                txtEmail.Text = modificar.Email;
+                                Session["UsuarioAModificar"] = modificar;
+                            }
 
                             // toca verificar si el usuario modificado es un telefonista
                             // si es se actua, sino se sigue con normalidad.
@@ -66,10 +70,10 @@ namespace expresssolution
                                 }
                             }
 
-                            Session["UsuarioAModificar"] = modificar;
                         }
                         else
                         {
+                            ddlTipoUsuario.Enabled = false;
                             ddlTipoUsuario.SelectedIndex = actual.tipoUsuario.Id - 1;
                             ddlTipoUsuario.DataBind();
                             txtNombre.Text = actual.Nombre;
@@ -82,6 +86,7 @@ namespace expresssolution
                     }
                     else
                     {
+                        ddlTipoUsuario.Enabled = false;
                         ddlTipoUsuario.SelectedIndex = actual.tipoUsuario.Id - 1;
                         ddlTipoUsuario.DataBind();
                         txtNombre.Text = actual.Nombre;
@@ -173,6 +178,7 @@ namespace expresssolution
 
                 negocio.ModificarUsuario(modificar);
 
+                Session["PaginaAnterior"] = "";
                 Session["Exito"] = "Datos guardados exitosamente.";
                 Response.Redirect("Exito.aspx", false);
             }

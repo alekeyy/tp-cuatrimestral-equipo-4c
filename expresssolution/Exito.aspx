@@ -9,14 +9,15 @@
         <h5 class="seccion-bg mb-0 p-1">Iniciar Sesion</h5>
         <div class="card mb-3">
             <div class="row no-gutters">
-                <div class="col-md-4 d-flex align-items-center">
+                <div class="col-md-4 d-flex align-items-center p-4">
                     <img src="https://cdn-icons-png.flaticon.com/512/5610/5610944.png" class="card-img" alt="Tilde Accion Correcta">
                 </div>
-                <div class="col-md-8">
-                    <div class="card-body">
+                <div class="col-md-8 d-flex align-items-center justify-content-center">
+                    <div class="card-body text-center">
                         <div class="mt-1">
                             <asp:Label ID="AccionExitosa" runat="server" Text=""></asp:Label>
                         </div>
+                    </div>
                 </div>
             </div>
         </div>
