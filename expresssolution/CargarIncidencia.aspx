@@ -35,6 +35,12 @@
                         <asp:Label Text="" runat="server" ID="lblDescripcionObligatoria"/>
                         <asp:TextBox runat="server" ID="txtDescripcionIncidencia" CssClass="form-control" AutoPostBack="true" />
                     </div>
+                    
+                        <div class="col">
+                            <asp:Label Text="Comentario: " runat="server" CssClass="form-label" />
+                        <asp:Label Text="" runat="server" ID="lblComentarioObligatorio"/>
+                            <asp:TextBox runat="server" ID="txtComentarioIncidencia" CssClass="form-control" AutoPostBack="true"/>
+                        </div>
                 </div>
 
                 <% if (!(Seguridad.seguridad.EsCliente(Session["usuario"])))
@@ -60,11 +66,6 @@
                             <asp:Label Text="Telefonista: " runat="server" CssClass="form-label" />
                             <asp:DropDownList runat="server" ID="ddlTelefonista" CssClass="form-control">
                             </asp:DropDownList>
-                        </div>
-                        <div class="col">
-                            <asp:Label Text="Comentario: " runat="server" CssClass="form-label" />
-                        <asp:Label Text="" runat="server" ID="lblComentarioObligatorio"/>
-                            <asp:TextBox runat="server" ID="txtComentarioIncidencia" CssClass="form-control" AutoPostBack="true"/>
                         </div>
 
                 <%} %>

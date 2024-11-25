@@ -60,6 +60,24 @@ namespace expresssolution
         protected global::System.Web.UI.WebControls.TextBox txtDescripcionIncidencia;
 
         /// <summary>
+        /// Control lblComentarioObligatorio.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label lblComentarioObligatorio;
+
+        /// <summary>
+        /// Control txtComentarioIncidencia.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.TextBox txtComentarioIncidencia;
+
+        /// <summary>
         /// Control ddlEstadoIncidencia.
         /// </summary>
         /// <remarks>
@@ -94,24 +112,6 @@ namespace expresssolution
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
         protected global::System.Web.UI.WebControls.DropDownList ddlTelefonista;
-
-        /// <summary>
-        /// Control lblComentarioObligatorio.
-        /// </summary>
-        /// <remarks>
-        /// Campo generado automáticamente.
-        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Label lblComentarioObligatorio;
-
-        /// <summary>
-        /// Control txtComentarioIncidencia.
-        /// </summary>
-        /// <remarks>
-        /// Campo generado automáticamente.
-        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox txtComentarioIncidencia;
 
         /// <summary>
         /// Control btnAgregar.

@@ -12,7 +12,7 @@ namespace EmailService
         public emailService()
         {
             server = new SmtpClient();
-            server.Credentials = new NetworkCredential("05f39a6c643a1a", "f7f51ac78ef05c");
+            server.Credentials = new NetworkCredential("f7f941c1b24bb7", "9f6e2a6725418b");
             server.EnableSsl = true;
             server.Port = 2525;
             server.Host = "sandbox.smtp.mailtrap.io";
@@ -21,7 +21,7 @@ namespace EmailService
         public void armarCorreo(string emailDestino, string asunto, string cuerpo)
         {
             email = new MailMessage();
-            email.From = new MailAddress("prog3tpcuatrimestral@gmail.com");
+            email.From = new MailAddress("braianpirelli@gmail.com");
             email.To.Add(emailDestino);
             email.Subject = asunto;
             email.IsBodyHtml = true;
