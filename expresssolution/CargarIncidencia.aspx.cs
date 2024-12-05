@@ -19,6 +19,7 @@ namespace expresssolution
                 EstadoNegocio estados = new EstadoNegocio();
                 ddlCliente.Enabled = true;
                 ddlTelefonista.Enabled = true;
+                txtDescripcionIncidencia.Enabled = true;
                 btnAgregar.Text = "Agregar";
                 btnAgregar.Enabled = false;
                 // los comentarios en la incidencia solo se pueden ingresar
@@ -65,6 +66,7 @@ namespace expresssolution
                     Session["PaginaAnterior"] = Title.ToString();
                     //POR LOGICA NO SE DEBERIA PODER MODIFICAR EL CLIENTE QUE CARGO LA INCIDENCIA
                     ddlEstadoIncidencia.Enabled = true;
+                    txtDescripcionIncidencia.Enabled = false;
                     btnAgregar.Text = "Modificar";
 
                     Incidencia incidencia = new Incidencia();
@@ -140,8 +142,6 @@ namespace expresssolution
                         contadorGeneral++;
                     }
 
-                    txtComentarioIncidencia.Text = incidencia.Comentarios;
-
                     btnAgregar.Enabled = true;
                 }
 
@@ -158,6 +158,7 @@ namespace expresssolution
                 {
                     // en cuanto encuentra el indice en el cual se encuentra ese usuario 
                     // precarga su nombre e inhabilita la opcion de seleccionar para que no pueda ser modificada.
+                    btnAgregar.Text = "aceptar";
                     contadorGeneral = 0;
                     foreach (Usuario recipiente in usuarios.listarEspecifico(1))
                     {
@@ -285,18 +286,25 @@ namespace expresssolution
                 if ((string)Session["PaginaAnterior"] == "Cargar Incidencia")
                 {
                     Session["PaginaAnterior"] = "";
-                    nueva.IDCliente = int.Parse(ddlCliente.SelectedValue);
-                    nueva.IDTelefonista = int.Parse(ddlTelefonista.SelectedValue);
-                    nueva.Nombre = txtNombreIncidencia.Text;
-                    nueva.Descripcion = txtDescripcionIncidencia.Text;
+                    if (seguridad.EsCliente(Session["usuario"]))
+                    {
+                        Response.Redirect("Principal.aspx", false);
+                    }
+                    else
+                    {
+                        nueva.IDCliente = int.Parse(ddlCliente.SelectedValue);
+                        nueva.IDTelefonista = int.Parse(ddlTelefonista.SelectedValue);
+                        nueva.Nombre = txtNombreIncidencia.Text;
+                        nueva.Descripcion = txtDescripcionIncidencia.Text;
 
-                    nueva.IDIncidencia = (int)Session["IdAModificar"];
-                    actualizacion.IDPrioridadIncidencia = int.Parse(ddlPrioridadIncidencia.SelectedValue);
-                    actualizacion.IDTipoIncidencia = int.Parse(ddlTipoIncidencia.SelectedValue);
-                    actualizacion.IDEstado = int.Parse(ddlEstadoIncidencia.SelectedValue);
-                    actualizacion.Comentarios = txtComentarioIncidencia.Text;
+                        nueva.IDIncidencia = (int)Session["IdAModificar"];
+                        actualizacion.IDPrioridadIncidencia = int.Parse(ddlPrioridadIncidencia.SelectedValue);
+                        actualizacion.IDTipoIncidencia = int.Parse(ddlTipoIncidencia.SelectedValue);
+                        actualizacion.IDEstado = int.Parse(ddlEstadoIncidencia.SelectedValue);
+                        actualizacion.Comentarios = txtComentarioIncidencia.Text;
 
-                    nuevaNegocio.actualizarIncidencia(nueva, actualizacion);
+                        nuevaNegocio.actualizarIncidencia(nueva, actualizacion);
+                    }
                 }
                 else
                 {

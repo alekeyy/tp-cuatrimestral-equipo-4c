@@ -15,7 +15,7 @@ namespace accesoDatos
 
         public AccesoDatos()
         {
-            conexion = new SqlConnection("server=.\\SQLEXPRESS; database=EXPRESS_SOLUTIONS_DB_borrador; integrated security=true;");
+            conexion = new SqlConnection("server=.\\SQLEXPRESS; database=EXPRESS_SOLUTIONS_DB; integrated security=true;");
             comando = new SqlCommand();
         }
 

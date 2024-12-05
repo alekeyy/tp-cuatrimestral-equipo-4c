@@ -23,7 +23,6 @@ namespace Negocio
                     incidencia.IDTipoIncidencia = (object)datos.Lector["IDTipoIncidencia"] == (object)DBNull.Value ? 1 : (int)datos.Lector["IDTipoIncidencia"];
                     incidencia.IDPrioridadIncidencia = (object)datos.Lector["IDPrioridadIncidencia"] == (object)DBNull.Value ? 1 : (int)datos.Lector["IDPrioridadIncidencia"];
                     incidencia.IDEstado = (object)datos.Lector["IDEstado"] == (object)DBNull.Value ? 1 : (int)datos.Lector["IDEstado"];
-                    incidencia.Comentarios = (object)datos.Lector["Comentarios"] == (object)DBNull.Value ? "" : (string)datos.Lector["Comentarios"];
                 }
 
                 return incidencia;

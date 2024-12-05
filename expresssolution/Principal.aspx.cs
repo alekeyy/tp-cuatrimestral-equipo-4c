@@ -8,5 +8,19 @@ namespace expresssolution
         {
 
         }
+
+        protected void btnIngresar_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                Session["PaginaAnterior"] = Title.ToString();
+                Response.Redirect("CargarIncidencia.aspx", false);
+            }
+            catch (Exception ex)
+            {
+                Session["error"] = ex.ToString();
+                Response.Redirect("Error.aspx", false);
+            }
+        }
     }
 }

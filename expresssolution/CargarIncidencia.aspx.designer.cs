@@ -60,6 +60,15 @@ namespace expresssolution
         protected global::System.Web.UI.WebControls.TextBox txtDescripcionIncidencia;
 
         /// <summary>
+        /// Control txtComentarioCargado.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.TextBox txtComentarioCargado;
+
+        /// <summary>
         /// Control lblComentarioObligatorio.
         /// </summary>
         /// <remarks>

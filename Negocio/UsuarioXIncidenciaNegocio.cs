@@ -5,7 +5,7 @@ using System.Collections.Generic;
 
 namespace Negocio
 {
-    public class UsuarioXIncidenciaNegocio
+    public class UsuarioXIncidenciaNegocio 
     {
         public void cargarIncidencia(UsuarioXIncidencia nueva)
         {
